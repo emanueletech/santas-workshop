@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<svg width="527.244094488189" height="317.4803149606299" preserveAspectRatio="xMinYMin meet" viewBox="0 0 527 317" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="527.244094488189" height="317.4803149606299"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-317)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="170.07874015748033" y="96.37795275590553" width="107.7165354330709" height="187.08661417322833" rx="4.251968503937008" ry="4.251968503937008" style="stroke: rgb(33%,33%,33%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(85%,92%,85%); fill-rule: evenodd;"/>
+			<text x="223.93700787401576" y="186.5196850393701" style="font-family: DVB; font-size: 7.6px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,373) scale(1,-1)"></text>
+			<text x="184.18622662401577" y="266.45669291338584" style="font-family: DVB; font-size: 8.2px;fill: rgb(11%,11%,11%); stroke:none;" transform="translate(0,532) scale(1,-1)">Ricevitore XA004</text>
+			<text x="199.64892193651576" y="255.1181102362205" style="font-family: DV; font-size: 7.0px;fill: rgb(11%,11%,11%); stroke:none;" transform="translate(0,510) scale(1,-1)">+ core XA003</text>
+			<rect x="170.07874015748033" y="231.02362204724412" width="28.346456692913392" height="14.173228346456682" style="stroke: rgb(33%,33%,33%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(100%,85%,40%); fill-rule: evenodd;"/>
+			<text x="179.86232006643704" y="234.992125984252" style="font-family: DVB; font-size: 6.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,469) scale(1,-1)">S1</text>
+			<text x="146.86599178764766" y="235.27559055118112" style="font-family: DV; font-size: 6.2px;fill: rgb(46%,46%,46%); stroke:none;" transform="translate(0,470) scale(1,-1)">libera</text>
+			<rect x="170.07874015748033" y="191.33858267716536" width="28.346456692913392" height="14.173228346456682" style="stroke: rgb(33%,33%,33%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(100%,85%,40%); fill-rule: evenodd;"/>
+			<text x="179.86232006643704" y="195.30708661417327" style="font-family: DVB; font-size: 6.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,390) scale(1,-1)">S2</text>
+			<rect x="11.338582677165356" y="184.25196850393704" width="119.05511811023624" height="28.346456692913392" rx="4.251968503937008" ry="4.251968503937008" style="stroke: rgb(33%,33%,33%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(86%,90%,96%); fill-rule: evenodd;"/>
+			<text x="32.27610266978347" y="201.82677165354335" style="font-family: DVB; font-size: 7.6px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,403) scale(1,-1)">Servo 360° PG002</text>
+			<text x="45.19426673228347" y="188.78740157480314" style="font-family: DV; font-size: 6.4px;fill: rgb(26%,26%,26%); stroke:none;" transform="translate(0,377) scale(1,-1)">anello dei regali</text>
+			<path d="M 130.393701,198.425197 L 170.07874,198.425197 Z" style="stroke: rgb(75%,38%,10%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="170.0787 198.4252, 164.3348 200.8537, 164.3348 195.9967" style="stroke: rgb(75%,38%,10%); stroke-linecap: butt; stroke-width: 1; fill: rgb(75%,38%,10%); fill-rule: evenodd;"/>
+			<rect x="170.07874015748033" y="151.65354330708664" width="28.346456692913392" height="14.173228346456682" style="stroke: rgb(33%,33%,33%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(100%,85%,40%); fill-rule: evenodd;"/>
+			<text x="179.86232006643704" y="155.6220472440945" style="font-family: DVB; font-size: 6.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,311) scale(1,-1)">S3</text>
+			<rect x="11.338582677165356" y="144.56692913385828" width="119.05511811023624" height="28.346456692913392" rx="4.251968503937008" ry="4.251968503937008" style="stroke: rgb(33%,33%,33%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(86%,90%,96%); fill-rule: evenodd;"/>
+			<text x="32.27610266978347" y="162.1417322834646" style="font-family: DVB; font-size: 7.6px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,324) scale(1,-1)">Servo 180° PG001</text>
+			<text x="45.57551673228346" y="149.10236220472444" style="font-family: DV; font-size: 6.4px;fill: rgb(26%,26%,26%); stroke:none;" transform="translate(0,298) scale(1,-1)">braccio dell'elfo</text>
+			<path d="M 130.393701,158.740157 L 170.07874,158.740157 Z" style="stroke: rgb(75%,38%,10%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="170.0787 158.7402, 164.3348 161.1687, 164.3348 156.3117" style="stroke: rgb(75%,38%,10%); stroke-linecap: butt; stroke-width: 1; fill: rgb(75%,38%,10%); fill-rule: evenodd;"/>
+			<rect x="170.07874015748033" y="117.63779527559056" width="28.346456692913392" height="14.173228346456696" style="stroke: rgb(33%,33%,33%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(100%,85%,40%); fill-rule: evenodd;"/>
+			<text x="179.86232006643704" y="121.60629921259843" style="font-family: DVB; font-size: 6.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,243) scale(1,-1)">S4</text>
+			<text x="146.86599178764766" y="121.88976377952757" style="font-family: DV; font-size: 6.2px;fill: rgb(46%,46%,46%); stroke:none;" transform="translate(0,243) scale(1,-1)">libera</text>
+			<text x="33.383085091658465" y="272.12598425196853" style="font-family: DV; font-size: 6.2px;fill: rgb(33%,33%,33%); stroke:none;" transform="translate(0,544) scale(1,-1)">cavo del servo, 245 mm</text>
+			<text x="16.004618294783462" y="262.20472440944883" style="font-family: DV; font-size: 6.2px;fill: rgb(33%,33%,33%); stroke:none;" transform="translate(0,524) scale(1,-1)">arancione su S, rosso V, marrone G</text>
+			<rect x="249.4488188976378" y="236.69291338582678" width="28.346456692913364" height="14.173228346456682" style="stroke: rgb(33%,33%,33%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(100%,85%,40%); fill-rule: evenodd;"/>
+			<text x="258.8918226347195" y="240.6614173228347" style="font-family: DVB; font-size: 6.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,481) scale(1,-1)">D2</text>
+			<rect x="306.1417322834646" y="226.7716535433071" width="85.03937007874015" height="34.01574803149609" rx="4.251968503937008" ry="4.251968503937008" style="stroke: rgb(33%,33%,33%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(93%,93%,93%); fill-rule: evenodd;"/>
+			<text x="313.1032141978347" y="247.18110236220477" style="font-family: DVB; font-size: 7.6px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,494) scale(1,-1)">Hub LED sinistro</text>
+			<text x="315.36610482283464" y="234.14173228346456" style="font-family: DV; font-size: 6.4px;fill: rgb(26%,26%,26%); stroke:none;" transform="translate(0,468) scale(1,-1)">XA006, sotto il piano</text>
+			<path d="M 277.795276,243.779528 L 306.141732,243.779528 Z" style="stroke: rgb(12%,37%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="306.1417 243.7795, 300.3978 246.208, 300.3978 241.351" style="stroke: rgb(12%,37%,74%); stroke-linecap: butt; stroke-width: 1; fill: rgb(12%,37%,74%); fill-rule: evenodd;"/>
+			<text x="278.34084491879923" y="253.98425196850394" style="font-family: DV; font-size: 5.6px;fill: rgb(12%,37%,74%); stroke:none;" transform="translate(0,507) scale(1,-1)">SH 100 mm</text>
+			<path d="M 391.181102,243.779528 L 399.685039,260.787402 Z" style="stroke: rgb(72%,52%,4%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 399.685039,260.787402 L 411.023622,260.787402 Z" style="stroke: rgb(72%,52%,4%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="411.0236 260.7874, 405.2797 263.2159, 405.2797 258.3589" style="stroke: rgb(72%,52%,4%); stroke-linecap: butt; stroke-width: 1; fill: rgb(72%,52%,4%); fill-rule: evenodd;"/>
+			<rect x="411.02362204724415" y="252.85039370078744" width="110.55118110236225" height="15.874015748031525" rx="4.251968503937008" ry="4.251968503937008" style="stroke: rgb(33%,33%,33%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(100%,95%,80%); fill-rule: evenodd;"/>
+			<text x="466.29921259842524" y="257.38582677165357" style="font-family: DVB; font-size: 7.6px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,514) scale(1,-1)"></text>
+			<text x="416.69291338582684" y="257.9527559055118" style="font-family: DV; font-size: 6.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,515) scale(1,-1)">1  officina</text>
+			<path d="M 391.181102,243.779528 L 399.685039,242.645669 Z" style="stroke: rgb(72%,52%,4%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 399.685039,242.645669 L 411.023622,242.645669 Z" style="stroke: rgb(72%,52%,4%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="411.0236 242.6457, 405.2797 245.0742, 405.2797 240.2172" style="stroke: rgb(72%,52%,4%); stroke-linecap: butt; stroke-width: 1; fill: rgb(72%,52%,4%); fill-rule: evenodd;"/>
+			<rect x="411.02362204724415" y="234.70866141732284" width="110.55118110236225" height="15.874015748031496" rx="4.251968503937008" ry="4.251968503937008" style="stroke: rgb(33%,33%,33%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(100%,95%,80%); fill-rule: evenodd;"/>
+			<text x="466.29921259842524" y="239.24409448818898" style="font-family: DVB; font-size: 7.6px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,478) scale(1,-1)"></text>
+			<text x="416.69291338582684" y="239.81102362204726" style="font-family: DV; font-size: 6.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,479) scale(1,-1)">2  lampione</text>
+			<rect x="249.4488188976378" y="151.65354330708664" width="28.346456692913364" height="14.173228346456682" style="stroke: rgb(33%,33%,33%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(100%,85%,40%); fill-rule: evenodd;"/>
+			<text x="258.8918226347195" y="155.6220472440945" style="font-family: DVB; font-size: 6.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,311) scale(1,-1)">D1</text>
+			<rect x="306.1417322834646" y="141.73228346456693" width="85.03937007874015" height="34.01574803149606" rx="4.251968503937008" ry="4.251968503937008" style="stroke: rgb(33%,33%,33%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(93%,93%,93%); fill-rule: evenodd;"/>
+			<text x="315.37801888533465" y="162.1417322834646" style="font-family: DVB; font-size: 7.6px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,324) scale(1,-1)">Hub LED destro</text>
+			<text x="315.36610482283464" y="149.10236220472444" style="font-family: DV; font-size: 6.4px;fill: rgb(26%,26%,26%); stroke:none;" transform="translate(0,298) scale(1,-1)">XA006, sotto il piano</text>
+			<path d="M 277.795276,158.740157 L 306.141732,158.740157 Z" style="stroke: rgb(12%,37%,74%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="306.1417 158.7402, 300.3978 161.1687, 300.3978 156.3117" style="stroke: rgb(12%,37%,74%); stroke-linecap: butt; stroke-width: 1; fill: rgb(12%,37%,74%); fill-rule: evenodd;"/>
+			<text x="278.34084491879923" y="168.9448818897638" style="font-family: DV; font-size: 5.6px;fill: rgb(12%,37%,74%); stroke:none;" transform="translate(0,337) scale(1,-1)">SH 100 mm</text>
+			<path d="M 391.181102,158.740157 L 399.685039,175.748031 Z" style="stroke: rgb(72%,52%,4%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 399.685039,175.748031 L 411.023622,175.748031 Z" style="stroke: rgb(72%,52%,4%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="411.0236 175.748, 405.2797 178.1765, 405.2797 173.3195" style="stroke: rgb(72%,52%,4%); stroke-linecap: butt; stroke-width: 1; fill: rgb(72%,52%,4%); fill-rule: evenodd;"/>
+			<rect x="411.02362204724415" y="167.81102362204726" width="110.55118110236225" height="15.874015748031496" rx="4.251968503937008" ry="4.251968503937008" style="stroke: rgb(33%,33%,33%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(100%,95%,80%); fill-rule: evenodd;"/>
+			<text x="466.29921259842524" y="172.3464566929134" style="font-family: DVB; font-size: 7.6px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,344) scale(1,-1)"></text>
+			<text x="416.69291338582684" y="172.91338582677167" style="font-family: DV; font-size: 6.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,345) scale(1,-1)">1  stella (LED A)</text>
+			<path d="M 391.181102,158.740157 L 399.685039,157.606299 Z" style="stroke: rgb(72%,52%,4%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 399.685039,157.606299 L 411.023622,157.606299 Z" style="stroke: rgb(72%,52%,4%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="411.0236 157.6063, 405.2797 160.0348, 405.2797 155.1778" style="stroke: rgb(72%,52%,4%); stroke-linecap: butt; stroke-width: 1; fill: rgb(72%,52%,4%); fill-rule: evenodd;"/>
+			<rect x="411.02362204724415" y="149.6692913385827" width="110.55118110236225" height="15.874015748031496" rx="4.251968503937008" ry="4.251968503937008" style="stroke: rgb(33%,33%,33%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(100%,95%,80%); fill-rule: evenodd;"/>
+			<text x="466.29921259842524" y="154.20472440944883" style="font-family: DVB; font-size: 7.6px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,308) scale(1,-1)"></text>
+			<text x="416.69291338582684" y="154.7716535433071" style="font-family: DV; font-size: 6.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,309) scale(1,-1)">2  palline (LED B)</text>
+			<path d="M 391.181102,158.740157 L 399.685039,139.464567 Z" style="stroke: rgb(72%,52%,4%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 399.685039,139.464567 L 411.023622,139.464567 Z" style="stroke: rgb(72%,52%,4%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="411.0236 139.4646, 405.2797 141.8931, 405.2797 137.0361" style="stroke: rgb(72%,52%,4%); stroke-linecap: butt; stroke-width: 1; fill: rgb(72%,52%,4%); fill-rule: evenodd;"/>
+			<rect x="411.02362204724415" y="131.52755905511813" width="110.55118110236225" height="15.874015748031496" rx="4.251968503937008" ry="4.251968503937008" style="stroke: rgb(33%,33%,33%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(100%,95%,80%); fill-rule: evenodd;"/>
+			<text x="466.29921259842524" y="136.06299212598427" style="font-family: DVB; font-size: 7.6px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,272) scale(1,-1)"></text>
+			<text x="416.69291338582684" y="136.62992125984255" style="font-family: DV; font-size: 6.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,273) scale(1,-1)">3  lanterna della slitta</text>
+			<path d="M 391.181102,158.740157 L 399.685039,121.322835 Z" style="stroke: rgb(72%,52%,4%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 399.685039,121.322835 L 411.023622,121.322835 Z" style="stroke: rgb(72%,52%,4%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="411.0236 121.3228, 405.2797 123.7513, 405.2797 118.8943" style="stroke: rgb(72%,52%,4%); stroke-linecap: butt; stroke-width: 1; fill: rgb(72%,52%,4%); fill-rule: evenodd;"/>
+			<rect x="411.02362204724415" y="113.38582677165356" width="110.55118110236225" height="15.874015748031482" rx="4.251968503937008" ry="4.251968503937008" style="stroke: rgb(33%,33%,33%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(100%,95%,80%); fill-rule: evenodd;"/>
+			<text x="466.29921259842524" y="117.92125984251967" style="font-family: DVB; font-size: 7.6px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,235) scale(1,-1)"></text>
+			<text x="416.69291338582684" y="118.48818897637796" style="font-family: DV; font-size: 6.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,236) scale(1,-1)">4  lanterna dell'elfo</text>
+			<text x="411.50526728592524" y="283.46456692913387" style="font-family: DV; font-size: 6.0px;fill: rgb(33%,33%,33%); stroke:none;" transform="translate(0,566) scale(1,-1)">prese numerate dall'ingresso bianco</text>
+			<text x="423.58583369217524" y="85.03937007874016" style="font-family: DV; font-size: 6.0px;fill: rgb(33%,33%,33%); stroke:none;" transform="translate(0,170) scale(1,-1)">cavo del LED: 100 mm, fisso</text>
+			<rect x="181.4173228346457" y="89.29133858267717" width="45.35433070866142" height="14.173228346456696" style="stroke: rgb(33%,33%,33%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(100%,85%,40%); fill-rule: evenodd;"/>
+			<text x="199.10996670460142" y="93.25984251968505" style="font-family: DVB; font-size: 6.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,186) scale(1,-1)">XH</text>
+			<rect x="170.07874015748033" y="22.67716535433071" width="107.7165354330709" height="34.01574803149607" rx="4.251968503937008" ry="4.251968503937008" style="stroke: rgb(33%,33%,33%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(96%,90%,86%); fill-rule: evenodd;"/>
+			<text x="183.15009381151577" y="43.08661417322835" style="font-family: DVB; font-size: 7.6px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,86) scale(1,-1)">Interruttore XA007</text>
+			<text x="195.35263287401577" y="30.047244094488192" style="font-family: DV; font-size: 6.4px;fill: rgb(26%,26%,26%); stroke:none;" transform="translate(0,60) scale(1,-1)">cursore nel fronte</text>
+			<rect x="22.67716535433071" y="22.67716535433071" width="107.71653543307089" height="34.01574803149607" rx="4.251968503937008" ry="4.251968503937008" style="stroke: rgb(33%,33%,33%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(86%,90%,96%); fill-rule: evenodd;"/>
+			<text x="46.80525728961615" y="43.08661417322835" style="font-family: DVB; font-size: 7.6px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,86) scale(1,-1)">Batteria 7,4 V</text>
+			<text x="46.41824557086615" y="30.047244094488192" style="font-family: DV; font-size: 6.4px;fill: rgb(26%,26%,26%); stroke:none;" transform="translate(0,60) scale(1,-1)">culla del coperchio</text>
+			<path d="M 130.393701,39.685039 L 170.07874,39.685039 Z" style="stroke: rgb(69%,13%,13%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="170.0787 39.68504, 164.3348 42.11354, 164.3348 37.25654" style="stroke: rgb(69%,13%,13%); stroke-linecap: butt; stroke-width: 1; fill: rgb(69%,13%,13%); fill-rule: evenodd;"/>
+			<text x="146.73016578494094" y="45.35433070866142" style="font-family: DVB; font-size: 5.8px;fill: rgb(69%,13%,13%); stroke:none;" transform="translate(0,90) scale(1,-1)">IN</text>
+			<path d="M 204.094488,56.692913 L 204.094488,89.291339 Z" style="stroke: rgb(69%,13%,13%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="204.0945 89.29134, 201.666 83.5474, 206.523 83.5474" style="stroke: rgb(69%,13%,13%); stroke-linecap: butt; stroke-width: 1; fill: rgb(69%,13%,13%); fill-rule: evenodd;"/>
+			<text x="208.34645669291342" y="73.70078740157481" style="font-family: DV; font-size: 5.8px;fill: rgb(69%,13%,13%); stroke:none;" transform="translate(0,147) scale(1,-1)">OUT · XH 100 mm</text>
+			<rect x="232.44094488188978" y="111.96850393700788" width="39.685039370078755" height="14.173228346456696" style="stroke: rgb(33%,33%,33%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(100%,85%,40%); fill-rule: evenodd;"/>
+			<text x="241.60905050442915" y="115.93700787401576" style="font-family: DVB; font-size: 6.2px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,231) scale(1,-1)">USB-C</text>
+			<rect x="311.8110236220473" y="22.67716535433071" width="136.06299212598424" height="34.01574803149607" rx="4.251968503937008" ry="4.251968503937008" style="stroke: rgb(33%,33%,33%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(93%,93%,93%); fill-rule: evenodd;"/>
+			<text x="321.2264064037894" y="43.08661417322835" style="font-family: DVB; font-size: 7.6px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,86) scale(1,-1)">Computer (cavo USB-C tuo)</text>
+			<text x="330.4706446850394" y="30.047244094488192" style="font-family: DV; font-size: 6.4px;fill: rgb(26%,26%,26%); stroke:none;" transform="translate(0,60) scale(1,-1)">solo per caricare il programma</text>
+			<path d="M 311.811024,39.685039 L 294.80315,39.685039 Z" style="stroke: rgb(46%,46%,46%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 294.80315,39.685039 L 294.80315,119.055118 Z" style="stroke: rgb(46%,46%,46%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<path d="M 294.80315,119.055118 L 272.125984,119.055118 Z" style="stroke: rgb(46%,46%,46%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="272.126 119.0551, 277.8699 116.6266, 277.8699 121.4836" style="stroke: rgb(46%,46%,46%); stroke-linecap: butt; stroke-width: 1; fill: rgb(46%,46%,46%); fill-rule: evenodd;"/>
+			<text x="11.338582677165356" y="294.80314960629926" style="font-family: DV; font-size: 6.4px;fill: rgb(33%,33%,33%); stroke:none;" transform="translate(0,589) scale(1,-1)">Libere: S1, S4, Motor 1, Motor 2.</text>
+			<text x="11.338582677165356" y="8.503937007874017" style="font-family: DV; font-size: 6.4px;fill: rgb(33%,33%,33%); stroke:none;" transform="translate(0,17) scale(1,-1)">Funziona da solo all'accensione: niente telecomando e niente pulsanti.</text>
+		</g>
+	</g>
+</svg>
