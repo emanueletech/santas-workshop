@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-13
+
+- Firmware 2.2: the elf works at random moments. A random wait before each gift and, now and then, a full parade turn of the ring with the arm out. A simulation of 200,000 switch-ons found no case where the arm comes down on a gift or a gift is left on the ring. Not yet tested on the real core.
+- New "How it runs" animation that follows firmware 2.2.
+- New README: animated banner, numbers, assembly guide card, electronics card and badges.
+
 ## 2026-11-12
 
 - Servo brackets: notch for the servo wires in the bracket hole, so the servo goes in with its wires. Guide step 4 updated.

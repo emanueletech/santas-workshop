@@ -67,8 +67,10 @@ Thirty steps, from snapping the keys off the kit cards to loading the first gift
 
 1. **Lights on.** The tree, the workshop, the street lamp and both lanterns light up from six LEDs.
 2. **Load the gifts.** Six gifts snap onto the magnets of the ring while the lanterns blink green.
-3. **The elf delivers.** The elf swings its arm across the track, a 360° servo turns the 100-tooth ring one spot through a 12-tooth pinion, and the arm pushes the gift off.
+3. **The elf picks its moment.** It waits a random time, and now and then the ring first parades the gifts one full turn. Then the elf swings its arm across the track, a 360° servo turns the 100-tooth ring one spot through a 12-tooth pinion, and the arm pushes the next gift off.
 4. **Into the drawer.** The sleigh has no floor, so each gift drops into a drawer in the front of the base. After the sixth gift the lanterns blink red.
+
+Every switch-on gives a different show.
 
 ## ⚡ Electronics
 
@@ -80,7 +82,7 @@ Everything comes from the Bambu Lab CyberBrick range and is plugged with the kit
 
 ## 💾 Firmware
 
-[`firmware/main.py`](firmware/main.py) is a standalone MicroPython program for the CyberBrick core. It runs the whole show on its own: light scenes, ring stops and the elf's arm, with every timing in one settings block at the top. Wiring and loading steps are in [`firmware/README.md`](firmware/README.md).
+[`firmware/main.py`](firmware/main.py) is a standalone MicroPython program for the CyberBrick core. It runs the whole show on its own: light scenes, ring stops and the elf's arm at random moments, with every timing in one settings block at the top. Version 2.2 is not yet tested on the real core. Wiring and loading steps are in [`firmware/README.md`](firmware/README.md).
 
 ## 📸 From the workbench
 

@@ -1,8 +1,25 @@
 # Firmware
 
-`main.py` is the standalone program for the CyberBrick core on the receiver shield (ESP32-C3, MicroPython, Bambu `bbl` library). Current version: 2.1.
+`main.py` is the standalone program for the CyberBrick core on the receiver shield (ESP32-C3, MicroPython, Bambu `bbl` library). Current version: 2.2 (not yet tested on the real core).
 
 It needs no remote and no buttons: switch on and the show starts. The full description of the sequence, the wiring and every setting is in the comment block at the top of `main.py`.
+
+## The show
+
+1. Switch on with the ring empty. The lights start and the lanterns blink green: put the six gifts on the ring, leaving empty the spot in front of the elf.
+2. The ring makes a first move and stops with the empty spot in front of the elf.
+3. For each gift the elf waits a random time with its arm out. Now and then the ring first parades the gifts one full turn. Then the arm swings in, the ring moves one spot, the next gift is pushed into the sleigh and the arm swings out again.
+4. After the sixth gift the lanterns blink red: open the drawer and take the gifts.
+
+The randomness is set at the top of `main.py`:
+
+| Setting | Default | What it does |
+| --- | --- | --- |
+| `PAUSE_MIN_S`, `PAUSE_MAX_S` | 3, 12 | Random wait before each gift, in seconds. |
+| `PARADE_CHANCE` | 15 | Chance in % that the ring parades one full turn before a gift. Set 0 to turn parades off. |
+| `MAX_SPOTS` | 14 | Limit on all ring moves together, in spots (two turns). |
+
+The ring has no sensor: its position comes from the time, so measure `RING_TURN_S` well. Parades add travel, so they also add timing error. If the arm comes down on a gift after a parade, measure `RING_TURN_S` again or set `PARADE_CHANCE = 0`.
 
 ## Wiring
 
