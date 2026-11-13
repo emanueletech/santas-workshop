@@ -1,6 +1,6 @@
 # Firmware
 
-`main.py` is the standalone program for the CyberBrick core on the receiver shield (ESP32-C3, MicroPython, Bambu `bbl` library). Current version: 2.2 (not yet tested on the real core).
+`main.py` is the standalone program for the CyberBrick core on the receiver shield (ESP32-C3, MicroPython, Bambu `bbl` library). Current version: 2.2 (run on the real core, still to be tested on the assembled diorama).
 
 It needs no remote and no buttons: switch on and the show starts. The full description of the sequence, the wiring and every setting is in the comment block at the top of `main.py`.
 
@@ -11,11 +11,13 @@ It needs no remote and no buttons: switch on and the show starts. The full descr
 3. For each gift the elf waits a random time with its arm out. Now and then the ring first parades the gifts one full turn. Then the arm swings in, the ring moves one spot, the next gift is pushed into the sleigh and the arm swings out again.
 4. After the sixth gift the lanterns blink red: open the drawer and take the gifts.
 
+A show lasts about 2.5 to 4.5 minutes, about one minute more when the ring parades.
+
 The randomness is set at the top of `main.py`:
 
 | Setting | Default | What it does |
 | --- | --- | --- |
-| `PAUSE_MIN_S`, `PAUSE_MAX_S` | 3, 12 | Random wait before each gift, in seconds. |
+| `PAUSE_MIN_S`, `PAUSE_MAX_S` | 8, 25 | Random wait before each gift, in seconds. |
 | `PARADE_CHANCE` | 15 | Chance in % that the ring parades one full turn before a gift. Set 0 to turn parades off. |
 | `MAX_SPOTS` | 14 | Limit on all ring moves together, in spots (two turns). |
 

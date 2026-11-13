@@ -2,7 +2,7 @@
 
 ## 2026-11-13
 
-- Firmware 2.2: the elf works at random moments. A random wait before each gift and, now and then, a full parade turn of the ring with the arm out. A simulation of 200,000 switch-ons found no case where the arm comes down on a gift or a gift is left on the ring. Not yet tested on the real core.
+- Firmware 2.2: the elf works at random moments. A random wait of 8 to 25 seconds before each gift and, now and then, a full parade turn of the ring with the arm out. A simulation of 200,000 switch-ons found no case where the arm comes down on a gift or a gift is left on the ring. Run on the real core without servos connected; still to be tested on the assembled diorama.
 - New "How it runs" animation that follows firmware 2.2.
 - New README: animated banner, numbers, assembly guide card, electronics card and badges.
 

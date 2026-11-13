@@ -77,8 +77,8 @@ STAR_LOW = 0.35          # twinkle: dimmest point of the breath (0..1)
 STAR_SPARKLE_MS = 5300   # twinkle: a short full-power sparkle this often
 STAR_BLINK_MS = 600      # blink: on and off times
 SPOTS = 7                # gift spots on the ring (6 gifts + the empty one under the blade)
-PAUSE_MIN_S = 3          # v2.2: random pause with the arm out before each gift (seconds, min and max)
-PAUSE_MAX_S = 12
+PAUSE_MIN_S = 8          # v2.2: random pause with the arm out before each gift (seconds, min and max; Manu 13/11: longer show)
+PAUSE_MAX_S = 25
 PARADE_CHANCE = 15       # v2.2: % chance, before each gift, that the ring first parades the gifts one full turn (arm out)
 MAX_SPOTS = 14           # v2.2: cap on all ring moves together, in spots (14 = two turns): timing errors add up with travel
 # LED index on each hub (socket number - 1)
