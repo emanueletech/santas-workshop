@@ -4,6 +4,7 @@
 
 - Firmware 2.2: the elf works at random moments. A random wait of 8 to 25 seconds before each gift and, now and then, a full parade turn of the ring with the arm out. A simulation of 200,000 switch-ons found no case where the arm comes down on a gift or a gift is left on the ring. Run on the real core without servos connected; still to be tested on the assembled diorama.
 - New "How it runs" animation that follows firmware 2.2.
+- Servos lowered: new servo brackets for the drive and the elf, fixed with screws from below; new pinion and elf arm with a round spigot through the deck hole (the real servo boss did not pass the old hole). New magnet pocket in the gift boxes. Guide steps 4, 5, 11 and 18 updated, PDFs, interactive guide and all-steps GIF regenerated.
 - New README: animated banner, numbers, assembly guide card, electronics card and badges.
 
 ## 2026-11-12
