@@ -109,6 +109,10 @@ Everything comes from the Bambu Lab CyberBrick range and is plugged with the kit
 > [!NOTE]
 > The printable files (STL, 3MF, STEP) are not in this repository. Santa's Workshop will be a MakerWorld exclusive, so they will be available only there. The link will be added here when the model is online.
 
+## 📜 License
+
+The guide, images, firmware and documentation in this repository are released under [CC BY-NC-SA 4.0](LICENSE): you can share and adapt them for non-commercial use, with credit to emanuele tech. Selling prints, kits or assembled dioramas needs a commercial license, available on MakerWorld.
+
 ---
 
 <p align="center">

@@ -17,7 +17,7 @@
 
 - [ ] Print profiles for smaller beds (256 mm and 180 mm).
 - [ ] Publish the interactive guide with GitHub Pages (Settings > Pages > branch main, folder /docs) and link it from the README.
-- [ ] Choose a licence for the guide and the firmware.
+- [x] Licence: CC BY-NC-SA 4.0, commercial licenses on MakerWorld.
 
 ## Ideas
 

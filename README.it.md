@@ -109,6 +109,10 @@ Tutto viene dalla linea Bambu Lab CyberBrick e si collega con i cavi del kit, se
 > [!NOTE]
 > I file da stampare (STL, 3MF, STEP) non sono in questa repository. Il Laboratorio di Babbo Natale sarà un modello esclusivo MakerWorld, quindi saranno disponibili solo lì. Il link verrà aggiunto qui quando il modello sarà online.
 
+## 📜 Licenza
+
+Guida, immagini, firmware e documentazione di questa repository sono rilasciati con licenza [CC BY-NC-SA 4.0](LICENSE): puoi condividerli e modificarli per uso non commerciale, citando emanuele tech. Per vendere stampe, kit o diorami montati serve una licenza commerciale, disponibile su MakerWorld.
+
 ---
 
 <p align="center">
