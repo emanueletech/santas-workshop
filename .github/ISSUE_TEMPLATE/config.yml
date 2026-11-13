@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Print files and print profile
+    url: https://github.com/emanueletech/santas-workshop#-in-this-repository
+    about: The STL, 3MF and STEP files are on MakerWorld only. Questions about printing settings are welcome there.

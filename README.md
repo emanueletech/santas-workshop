@@ -10,6 +10,8 @@
   <img src="assets/badges/guide.svg" height="28" alt="Guide in English and Italian">
 </p>
 
+<p align="center"><b>English</b> · <a href="README.it.md">Italiano</a></p>
+
 <p align="center">
   <b>Switch it on and the workshop comes alive.</b><br>
   The tree lights up, the gift ring turns, and the elf pushes the gifts one by one through Santa's sleigh into a drawer. No remote, no buttons.
@@ -32,7 +34,7 @@
   <img src="assets/stats.svg" alt="150 printed parts, 13 plates, 24.5 hours and 730 g of PLA, no glue, supports or AMS" width="100%">
 </p>
 
-## 🛠️ Assembly guide
+## 🛠 Assembly guide
 
 <p align="center">
   <a href="docs/pdf/Santas_Workshop_assembly_guide_EN.pdf"><img src="assets/guide_card.svg" alt="Assembly guide: 30 steps in 6 phases, English and Italian. Open the guide." width="100%"></a>

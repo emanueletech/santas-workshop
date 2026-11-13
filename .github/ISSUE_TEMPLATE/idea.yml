@@ -1,0 +1,11 @@
+name: Idea or improvement
+description: A new light scene, a better part, a translation of the guide.
+title: "[Idea] "
+labels: ["idea"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+    validations:
+      required: true

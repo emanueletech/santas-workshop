@@ -1,0 +1,33 @@
+name: Assembly problem
+description: Something does not fit, is unclear in the guide, or a step does not work.
+title: "[Assembly] "
+labels: ["assembly"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for building Santa's Workshop! A photo helps a lot. You can write in English or Italian.
+  - type: input
+    id: step
+    attributes:
+      label: Guide step
+      description: Number and title of the step, for example "17 · Sleigh".
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happens
+      description: What you expected, what happened instead, and which part it concerns.
+    validations:
+      required: true
+  - type: input
+    id: printer
+    attributes:
+      label: Printer, filament and plate
+      description: For example "Bambu Lab A1, PLA Basic, Textured PEI".
+  - type: textarea
+    id: photos
+    attributes:
+      label: Photos
+      description: Drag photos here.

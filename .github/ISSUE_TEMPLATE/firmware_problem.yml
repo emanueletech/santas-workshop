@@ -1,0 +1,33 @@
+name: Firmware problem
+description: The show does not start, the ring or the elf stop in the wrong place, a light stays off.
+title: "[Firmware] "
+labels: ["firmware"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before opening an issue, check the settings section in `firmware/README.md` (ring direction, `RING_TURN_S`, `STOP_TRIM_S`). You can write in English or Italian.
+  - type: input
+    id: version
+    attributes:
+      label: Firmware version
+      description: The version in the first line of main.py, for example 2.2.
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happens
+      description: What the diorama does, and at which moment of the show.
+    validations:
+      required: true
+  - type: textarea
+    id: settings
+    attributes:
+      label: Settings you changed
+      description: Any value you changed at the top of main.py, for example RING_TURN_S = 58.
+  - type: textarea
+    id: media
+    attributes:
+      label: Photo or video
+      description: A short video of the problem helps the most.
