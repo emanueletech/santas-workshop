@@ -1,6 +1,6 @@
 # Firmware
 
-`main.py` is the standalone program for the CyberBrick core on the receiver shield (ESP32-C3, MicroPython, Bambu `bbl` library). Current version: 2.2 (run on the real core, still to be tested on the assembled diorama).
+`main.py` is the standalone program for the CyberBrick core on the receiver shield (ESP32-C3, MicroPython, Bambu `bbl` library). Current version: 2.4 (still to be tested on the real core and on the assembled diorama).
 
 It needs no remote and no buttons: switch on and the show starts. The full description of the sequence, the wiring and every setting is in the comment block at the top of `main.py`.
 
@@ -8,20 +8,21 @@ It needs no remote and no buttons: switch on and the show starts. The full descr
 
 1. Switch on with the ring empty. The lights start and the lanterns blink green: put the six gifts on the ring, leaving empty the spot in front of the elf.
 2. The ring makes a first move and stops with the empty spot in front of the elf.
-3. For each gift the elf waits a random time with its arm out. Now and then the ring first parades the gifts one full turn. Then the arm swings in, the ring moves one spot, the next gift is pushed into the sleigh and the arm swings out again.
+3. For each gift the elf waits a random time with its arm out. Now and then it fakes once or twice: the arm swings into the empty spot and back out while the ring stays still, so nothing drops. Then the arm swings in for real, the ring moves one spot, the next gift is pushed into the sleigh and the arm swings out again. The ring always stops with the gifts on their magnets.
 4. After the sixth gift the lanterns blink red: open the drawer and take the gifts.
 
-A show lasts about 2.5 to 4.5 minutes, about one minute more when the ring parades.
+A show lasts about 2.5 to 4 minutes.
 
 The randomness is set at the top of `main.py`:
 
 | Setting | Default | What it does |
 | --- | --- | --- |
 | `PAUSE_MIN_S`, `PAUSE_MAX_S` | 8, 25 | Random wait before each gift, in seconds. |
-| `PARADE_CHANCE` | 15 | Chance in % that the ring parades one full turn before a gift. Set 0 to turn parades off. |
-| `MAX_SPOTS` | 14 | Limit on all ring moves together, in spots (two turns). |
+| `FEINT_CHANCE` | 45 | Chance in % that the elf fakes before a gift. Set 0 to turn the feints off. |
+| `FEINT_MAX` | 2 | Most feints before one gift. |
+| `FEINT_HOLD_S` | 1 | Seconds the arm stays in during a feint. |
 
-The ring has no sensor: its position comes from the time, so measure `RING_TURN_S` well. Parades add travel, so they also add timing error. If the arm comes down on a gift after a parade, measure `RING_TURN_S` again or set `PARADE_CHANCE = 0`.
+The ring has no sensor: its position comes from the time, so measure `RING_TURN_S` well. The whole show is only six spots of travel, less than one turn, and a feint never moves the ring. The gifts always drop in the order they sit on the ring: a truly random order would need the arm to land between two gifts, and with a timed ring that is not reliable.
 
 ## Wiring
 

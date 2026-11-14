@@ -2,6 +2,7 @@
 
 ## 2026-11-14
 
+- Firmware 2.4: one gift at a time at random moments, no parade turn. Before a gift the elf sometimes fakes once or twice: the arm swings into the empty spot and back out, the ring stays still and nothing drops. New "How it runs" animation.
 - Base reprint round: the workshop LED now goes in from below into a seat in the base, held by a new white U clip (151 printed parts). The lantern and street lamp glasses have four small posts that hold their LEDs. Screw holes for the kit M2.5 screws are 2.3 mm. Guide steps 15, 16, 17, 19 and 20 updated; print time about 24.6 h and 736 g of PLA.
 
 ## 2026-11-13

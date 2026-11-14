@@ -69,7 +69,7 @@ Trenta passi, dallo staccare le chiavette dalle kit card fino a caricare i primi
 
 1. **Luci accese.** L'albero, l'officina, il lampione e le due lanterne si accendono con sei LED.
 2. **Carica i regali.** Sei regali si agganciano ai magneti dell'anello mentre le lanterne lampeggiano verdi.
-3. **L'elfo sceglie il momento.** Aspetta un tempo a caso, da 8 a 25 secondi, e ogni tanto l'anello fa prima sfilare i regali per un giro intero. Poi l'elfo porta il braccio di traverso sulla pista, un servo a 360° fa avanzare di un posto l'anello da 100 denti con un pignone da 12, e il braccio spinge giù il regalo successivo.
+3. **L'elfo sceglie il momento.** Aspetta un tempo a caso, da 8 a 25 secondi, e ogni tanto fa una finta: infila il braccio nel posto vuoto e lo ritira, e non cade niente. Poi l'elfo porta davvero il braccio di traverso sulla pista, un servo a 360° fa avanzare di un posto l'anello da 100 denti con un pignone da 12, e il braccio spinge giù il regalo successivo.
 4. **Nel cassetto.** La slitta non ha fondo, quindi ogni regalo cade in un cassetto sul davanti della base. Dopo il sesto regalo le lanterne lampeggiano rosse.
 
 Ogni accensione è uno spettacolo diverso.
@@ -84,7 +84,7 @@ Tutto viene dalla linea Bambu Lab CyberBrick e si collega con i cavi del kit, se
 
 ## 💾 Firmware
 
-[`firmware/main.py`](firmware/main.py) è un programma MicroPython autonomo per il core CyberBrick. Gestisce da solo tutto lo spettacolo: luci, fermate dell'anello e braccio dell'elfo in momenti casuali, con tutti i tempi in un unico blocco di impostazioni in cima al file. La versione 2.2 è ancora da provare sul diorama montato. Collegamenti e caricamento sono in [`firmware/README.md`](firmware/README.md) (in inglese).
+[`firmware/main.py`](firmware/main.py) è un programma MicroPython autonomo per il core CyberBrick. Gestisce da solo tutto lo spettacolo: luci, fermate dell'anello e braccio dell'elfo in momenti casuali, con tutti i tempi in un unico blocco di impostazioni in cima al file. La versione 2.4 è ancora da provare sul diorama montato. Collegamenti e caricamento sono in [`firmware/README.md`](firmware/README.md) (in inglese).
 
 ## 📸 Dal banco di lavoro
 

@@ -1,4 +1,4 @@
-# Santa's Workshop - standalone program for the CyberBrick receiver (ESP32-C3, MicroPython, bbl library). v2.2
+# Santa's Workshop - standalone program for the CyberBrick receiver (ESP32-C3, MicroPython, bbl library). v2.4
 # Automatic: no buttons and no remote. Switch on and the diorama runs by itself.
 # Upload: connect the core to the computer with a USB-C cable (through the window in the front of the base), open it in
 # Thonny (or the CyberBrick web editor) and save this file on the board as /main.py. To start it at power-on, open the board's
@@ -23,14 +23,16 @@
 #      ring (the magnets snap them in place); leave EMPTY the spot in front of the elf (where the arm lies when it is in).
 #   3. v2.2 (Manu 31/10, done 13/11): the elf works at RANDOM moments. The ring turns FIRST_DEG degrees and stops with the
 #      gap in front of the elf. Then, for each of the six gifts: a random pause with the arm out (PAUSE_MIN_S..PAUSE_MAX_S);
-#      sometimes the ring first parades the gifts one full turn with the arm out (PARADE_CHANCE, at most once: MAX_SPOTS)
-#      and stops again with the same gap in front of the elf; then the elf swings the arm in, the ring turns one spot (one gift is pushed off and drops through the
-#      sleigh into the drawer, the baubles go down one step), the ring stops, the elf swings the arm out again. The arm
+#      then the elf swings the arm in, the ring turns one spot (one gift is pushed off and drops through the sleigh into
+#      the drawer, the baubles go down one step), the ring stops with the gifts on their magnets, the elf swings the arm
+#      out again. v2.3 (Manu 13/11): one gift at a time, no parade turn any more.
+#      v2.4 (Manu 14/11): during the wait the elf sometimes FEINTS: it swings the arm into the empty spot and back
+#      without the ring moving, so nothing drops and you never know which swing will drop a gift. The arm
 #      only moves while the ring is still, and only into an empty spot with a gift right behind it.
 #      There is no sensor: the ring position comes from the time, so RING_TURN_S must be measured (see CONFIG). The arm
 #      finds its gap if the ring is within about 12 degrees (2 s on a 60 s turn) of where it should be (MuJoCo simulation
-#      31/10). Timing errors add up with every move, so the parades are capped at MAX_SPOTS spots in total (all moves
-#      together, about two turns); if the arm comes down on a gift, measure RING_TURN_S again or trim STOP_TRIM_S.
+#      31/10). Timing errors add up with every move: the whole show is only 6 spots of travel (less than one turn).
+#      If the arm comes down on a gift, measure RING_TURN_S again or trim STOP_TRIM_S.
 #   4. After the 6th gift the lanterns blink red: open the drawer, take the gifts, switch off. Next time start empty.
 import utime
 try:
@@ -79,8 +81,9 @@ STAR_BLINK_MS = 600      # blink: on and off times
 SPOTS = 7                # gift spots on the ring (6 gifts + the empty one under the blade)
 PAUSE_MIN_S = 8          # v2.2: random pause with the arm out before each gift (seconds, min and max; Manu 13/11: longer show)
 PAUSE_MAX_S = 25
-PARADE_CHANCE = 15       # v2.2: % chance, before each gift, that the ring first parades the gifts one full turn (arm out)
-MAX_SPOTS = 14           # v2.2: cap on all ring moves together, in spots (14 = two turns): timing errors add up with travel
+FEINT_CHANCE = 45        # v2.4: % chance, before each gift, that the elf first feints (arm in and out, ring still)
+FEINT_MAX = 2            # v2.4: at most this many feints before one gift
+FEINT_HOLD_S = 1         # v2.4: seconds the arm stays in during a feint
 # LED index on each hub (socket number - 1)
 L_WORKSHOP, L_LAMP1 = 0, 1                 # left hub  (D2 / LED2)
 L_STAR, L_BAUBLES, L_SLEIGH, L_ELF = 0, 1, 2, 3   # right hub (D1 / LED1), v1.9 order
@@ -160,26 +163,6 @@ def rand_ms(lo, hi):
     return int((lo + (hi - lo) * random.getrandbits(10) / 1023.0) * 1000)
 
 
-def plan():
-    """v2.2: list of 6 parades, one per gift, in spots (0 = no parade). Spots are numbered in the order they reach the elf:
-    spot 0 is the empty one in front of the elf after FIRST_DEG, spots 1..6 carry the gifts. Before each delivery the spot
-    in front must be empty and the next one must hold a gift. Total travel (parades + the 6 delivery moves) <= MAX_SPOTS."""
-    gift = [False] + [True] * 6
-    front, budget, out = 0, MAX_SPOTS - 6, []
-    for left in range(6, 0, -1):
-        good = [k for k in range(0, SPOTS + 1) if not gift[(front + k) % SPOTS] and gift[(front + k + 1) % SPOTS]]
-        ok = [k for k in good if k <= budget] or good[:1]   # over budget: take the shortest move that works
-        k = ok[0]
-        far = [j for j in ok if j > 0]           # the gifts sit together, so in practice this is one full turn (7 spots)
-        if far and random.getrandbits(7) < PARADE_CHANCE * 128 // 100:
-            k = far[0]
-        budget -= k
-        front = (front + k + 1) % SPOTS          # the delivery move: the next spot comes in front, its gift drops
-        gift[front] = False
-        out.append(k)
-    return out
-
-
 def main():
     t0 = utime.ticks_ms()
     rest = ELF_WORK + ELF_DIR * ELF_OUT
@@ -192,11 +175,17 @@ def main():
         arm(rest, t0, 'load', 0)                 # out over the snow while loading
         wait(LOAD_S * 1000, t0, 'load')
         ring_turn(FIRST_DEG, t0, 0)              # gap in front of the elf
-        for done, k in enumerate(plan(), 1):
-            wait(rand_ms(PAUSE_MIN_S, PAUSE_MAX_S), t0, 'show', done - 1)   # the elf waits a random time, arm out
-            if k:
-                ring_turn(k * STATION_DEG, t0, done - 1)   # parade with the arm out: stops with a gap in front of the elf
-                wait(rand_ms(1, 3), t0, 'show', done - 1)
+        for done in range(1, 7):                 # v2.3: one gift at a time, no parade; v2.4: feints
+            pause = rand_ms(PAUSE_MIN_S, PAUSE_MAX_S)
+            feints = 0
+            while feints < FEINT_MAX and random.getrandbits(7) < FEINT_CHANCE * 128 // 100:
+                feints += 1
+            for _ in range(feints):              # v2.4: feint into the empty spot, ring still: nothing drops
+                wait(pause // (feints + 1), t0, 'show', done - 1)
+                arm(ELF_WORK, t0, 'show', done - 1)
+                wait(FEINT_HOLD_S * 1000, t0, 'show', done - 1)
+                arm(rest, t0, 'show', done - 1)
+            wait(pause // (feints + 1), t0, 'show', done - 1)   # the elf waits a random time, arm out
             arm(ELF_WORK, t0, 'show', done - 1)  # swing in through the gap
             ring_turn(STATION_DEG, t0, done - 1) # one gift is pushed into the sleigh
             arm(rest, t0, 'show', done)          # swing out; baubles one step down
