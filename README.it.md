@@ -48,7 +48,9 @@
 
 Trenta passi, dallo staccare le chiavette dalle kit card fino a caricare i primi regali. Ogni passo ha la sua animazione, l'elenco dei pezzi con il piatto da cui vengono e le azioni da spuntare. La guida interattiva è una pagina unica con il cambio italiano / inglese: scarica [`docs/index.html`](docs/index.html) insieme alla cartella `docs/img` e aprila nel browser.
 
-**Attrezzi:** una chiave a brugola da 1,5 mm per le viti M2,5 × 6 del kit e un piccolo cacciavite a croce per le viti dei servo e la vite centrale. Niente colla.
+<p align="center">
+  <img src="assets/tools_it.svg" alt="Attrezzi: brugola da 1,5 mm per le viti M2,5 x 6 del kit, piccolo cacciavite a croce per le viti dei servo e la vite centrale, e lo strumento per le chiavette stampato con il modello. Niente colla e niente saldature." width="100%">
+</p>
 
 | Fase | Passi | Cosa succede |
 | :--- | :---: | :--- |

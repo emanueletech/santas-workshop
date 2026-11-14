@@ -48,7 +48,9 @@
 
 Thirty steps, from snapping the keys off the kit cards to loading the first gifts. Every step has its own animation, the list of parts with the plate they come from, and the actions to tick off. The interactive guide is a single page with an English / Italian switch: download [`docs/index.html`](docs/index.html) together with the `docs/img` folder and open it in a browser.
 
-**Tools:** a 1.5 mm hex key for the kit's M2.5 × 6 screws and a small Phillips screwdriver for the servo screws and the centre screw. No glue.
+<p align="center">
+  <img src="assets/tools.svg" alt="Tools: a 1.5 mm hex key for the kit M2.5 x 6 screws, a small Phillips screwdriver for the servo and centre screws, and the key press tool printed with the model. No glue and no soldering." width="100%">
+</p>
 
 | Phase | Steps | What happens |
 | :--- | :---: | :--- |
