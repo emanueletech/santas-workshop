@@ -6,7 +6,7 @@
   <img src="assets/badges/status.svg" height="28" alt="Status: work in progress">
   <img src="assets/badges/makerworld.svg" height="28" alt="MakerWorld exclusive">
   <img src="assets/badges/cyberbrick.svg" height="28" alt="CyberBrick, MicroPython">
-  <img src="assets/badges/firmware.svg" height="28" alt="Firmware 2.1">
+  <img src="assets/badges/firmware.svg" height="28" alt="Firmware 2.6">
   <img src="assets/badges/guide.svg" height="28" alt="Guide in English and Italian">
 </p>
 
@@ -27,7 +27,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/diorama_cutout.png" alt="Il diorama del Laboratorio di Babbo Natale (render)" width="80%">
+  <img src="images/photos/night_full.jpg" alt="Il Laboratorio di Babbo Natale di notte: albero, officina, lampione e slitta illuminati" width="100%">
 </p>
 
 <p align="center">
@@ -90,7 +90,21 @@ Tutto viene dalla linea Bambu Lab CyberBrick e si collega con i cavi del kit, se
 
 [`firmware/main.py`](firmware/main.py) è un programma MicroPython autonomo per il core CyberBrick. Gestisce da solo tutto lo spettacolo: luci, fermate dell'anello e braccio dell'elfo in momenti casuali, con tutti i tempi in un unico blocco di impostazioni in cima al file. La versione 2.6 è ancora da provare sul diorama montato. Collegamenti e caricamento sono in [`firmware/README.md`](firmware/README.md) (in inglese).
 
-## 📸 Dal banco di lavoro
+## 📸 Il diorama stampato
+
+<p align="center">
+  <img src="images/photos/workshop.jpg" alt="L'officina con il tetto innevato e un regalo sull'anello" width="32%">
+  <img src="images/photos/santa_sleigh.jpg" alt="Babbo Natale che saluta accanto alla slitta" width="32%">
+  <img src="images/photos/tree_detail.jpg" alt="L'albero con le palline e l'officina" width="32%">
+</p>
+
+<p align="center">
+  <img src="images/photos/night_lamp.jpg" alt="Il lampione e l'albero accesi di notte" width="32%">
+  <img src="images/photos/night_red.jpg" alt="La slitta che si illumina di rosso a fine spettacolo" width="32%">
+  <img src="images/photos/day_full.jpg" alt="Il diorama intero alla luce del giorno" width="32%">
+</p>
+
+### Dal banco di lavoro
 
 <p align="center">
   <img src="images/assembly/key_press_tool_in_hand_IMG_5712.jpeg" alt="Lo strumento per le chiavette" width="32%">
@@ -98,7 +112,7 @@ Tutto viene dalla linea Bambu Lab CyberBrick e si collega con i cavi del kit, se
   <img src="images/assembly/base_third_flat_key_then_santa_key_2026-11-12.jpeg" alt="La terza chiavetta piatta nella base, poi quella di Babbo Natale" width="32%">
 </p>
 
-<p align="center"><sub>Foto vere del primo montaggio completo. Le foto finali del diorama finito sostituiranno i render qui sopra.</sub></p>
+<p align="center"><sub>Foto vere del primo montaggio completo.</sub></p>
 
 ## 📁 Cosa c'è in questa repository
 
@@ -107,7 +121,7 @@ Tutto viene dalla linea Bambu Lab CyberBrick e si collega con i cavi del kit, se
 | [`docs/`](docs/) | Guida di montaggio interattiva (`index.html`) e le sue immagini. |
 | [`docs/pdf/`](docs/pdf/) | La stessa guida in PDF da stampare, un file per lingua. |
 | [`firmware/`](firmware/) | Programma MicroPython per il core CyberBrick e come caricarlo. |
-| [`images/`](images/) | Render, animazioni e foto del montaggio vero. |
+| [`images/`](images/) | Render, animazioni, foto del diorama stampato e del montaggio. |
 | [`assets/`](assets/) | Banner, logo e grafiche di questa pagina. |
 
 > [!NOTE]

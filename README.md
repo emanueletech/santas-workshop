@@ -6,7 +6,7 @@
   <img src="assets/badges/status.svg" height="28" alt="Status: work in progress">
   <img src="assets/badges/makerworld.svg" height="28" alt="MakerWorld exclusive">
   <img src="assets/badges/cyberbrick.svg" height="28" alt="CyberBrick, MicroPython">
-  <img src="assets/badges/firmware.svg" height="28" alt="Firmware 2.1">
+  <img src="assets/badges/firmware.svg" height="28" alt="Firmware 2.6">
   <img src="assets/badges/guide.svg" height="28" alt="Guide in English and Italian">
 </p>
 
@@ -27,7 +27,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/diorama_cutout.png" alt="Santa's Workshop diorama (render)" width="80%">
+  <img src="images/photos/night_full.jpg" alt="Santa's Workshop at night: the tree, the workshop, the lamp post and Santa's sleigh lit up" width="100%">
 </p>
 
 <p align="center">
@@ -90,7 +90,21 @@ Everything comes from the Bambu Lab CyberBrick range and is plugged with the kit
 
 [`firmware/main.py`](firmware/main.py) is a standalone MicroPython program for the CyberBrick core. It runs the whole show on its own: light scenes, ring stops and the elf's arm at random moments, with every timing in one settings block at the top. Version 2.6 is still to be tested on the assembled diorama. Wiring and loading steps are in [`firmware/README.md`](firmware/README.md).
 
-## 📸 From the workbench
+## 📸 The printed diorama
+
+<p align="center">
+  <img src="images/photos/workshop.jpg" alt="The workshop with its snowy roof and a gift on the ring" width="32%">
+  <img src="images/photos/santa_sleigh.jpg" alt="Santa waving next to his sleigh" width="32%">
+  <img src="images/photos/tree_detail.jpg" alt="The tree with its baubles and the workshop" width="32%">
+</p>
+
+<p align="center">
+  <img src="images/photos/night_lamp.jpg" alt="The lamp post and the tree lit at night" width="32%">
+  <img src="images/photos/night_red.jpg" alt="The sleigh glowing red at the end of the show" width="32%">
+  <img src="images/photos/day_full.jpg" alt="The whole diorama in daylight" width="32%">
+</p>
+
+### From the workbench
 
 <p align="center">
   <img src="images/assembly/key_press_tool_in_hand_IMG_5712.jpeg" alt="The key press tool" width="32%">
@@ -98,7 +112,7 @@ Everything comes from the Bambu Lab CyberBrick range and is plugged with the kit
   <img src="images/assembly/base_third_flat_key_then_santa_key_2026-11-12.jpeg" alt="The third flat key in the base, then Santa's key" width="32%">
 </p>
 
-<p align="center"><sub>Real photos from the first full assembly. Final photos of the finished diorama will replace the renders above.</sub></p>
+<p align="center"><sub>Real photos from the first full assembly.</sub></p>
 
 ## 📁 In this repository
 
@@ -107,7 +121,7 @@ Everything comes from the Bambu Lab CyberBrick range and is plugged with the kit
 | [`docs/`](docs/) | Interactive assembly guide (`index.html`) and its images. |
 | [`docs/pdf/`](docs/pdf/) | The same guide as printable PDF, one file per language. |
 | [`firmware/`](firmware/) | MicroPython program for the CyberBrick core and how to load it. |
-| [`images/`](images/) | Renders, animations and photos from the real assembly. |
+| [`images/`](images/) | Renders, animations, photos of the printed diorama and of the assembly. |
 | [`assets/`](assets/) | Banner, logo and the graphics of this page. |
 
 > [!NOTE]
