@@ -37,7 +37,7 @@
 ## 🛠 Guida di montaggio
 
 <p align="center">
-  <a href="docs/pdf/Santas_Workshop_guida_montaggio_IT.pdf"><img src="assets/guide_card_it.svg" alt="Guida di montaggio: 30 passi animati, in italiano e inglese. Apri la guida." width="100%"></a>
+  <a href="docs/pdf/Santas_Workshop_guida_montaggio_IT.pdf"><img src="assets/guide_card_it.svg" alt="Guida di montaggio: 31 passi animati, in italiano e inglese. Apri la guida." width="100%"></a>
 </p>
 
 <p align="center">
@@ -46,7 +46,7 @@
   <a href="docs/index.html"><img src="assets/badges/interactive.svg" height="28" alt="Guida interattiva"></a>
 </p>
 
-Trenta passi, dallo staccare le chiavette dalle kit card fino a caricare i primi regali. Ogni passo ha la sua animazione, l'elenco dei pezzi con il piatto da cui vengono e le azioni da spuntare. La guida interattiva è una pagina unica con il cambio italiano / inglese: scarica [`docs/index.html`](docs/index.html) insieme alla cartella `docs/img` e aprila nel browser.
+Trentuno passi, dallo staccare le chiavette dalle kit card fino a caricare i primi regali. Ogni passo ha la sua animazione, l'elenco dei pezzi con il piatto da cui vengono e le azioni da spuntare. La guida interattiva è una pagina unica con il cambio italiano / inglese: scarica [`docs/index.html`](docs/index.html) insieme alla cartella `docs/img` e aprila nel browser.
 
 <p align="center">
   <img src="assets/tools_it.svg" alt="Attrezzi: brugola da 1,5 mm per le viti M2,5 x 6 del kit, piccolo cacciavite a croce per le viti dei servo e la vite centrale, e lo strumento per le chiavette stampato con il modello. Niente colla e niente saldature." width="100%">
@@ -56,13 +56,13 @@ Trenta passi, dallo staccare le chiavette dalle kit card fino a caricare i primi
 | :--- | :---: | :--- |
 | **Preparazione** | 1–3 | Chiavette e strumento, magneti nell'anello e nei regali. |
 | **Sotto la base** | 4–10 | Servo, interruttore, hub dei LED e ricevitore, poi il programma e una prima prova. |
-| **Scena sopra la base** | 11–19 | Pignone, base dell'albero, anello, copertura di neve, officina, lampione, slitta ed elfo. |
-| **Luci e chiusura** | 20–24 | LED agli hub, batteria e coperchio, cassetto dei regali, sportello della ricarica, tappo USB. |
-| **Figure e albero** | 25–28 | Babbo Natale, il pupazzo di neve, il palo del Polo Nord e l'albero, un piano alla volta. |
-| **Accensione** | 29–30 | Carica i regali, accendi e regola lo spettacolo. |
+| **Scena sopra la base** | 11–20 | Pignone, base dell'albero, anello, copertura di neve, officina, lampione, slitta ed elfo. |
+| **Luci e chiusura** | 21–25 | LED agli hub, batteria e coperchio, cassetto dei regali, sportello della ricarica, tappo USB. |
+| **Figure e albero** | 26–29 | Babbo Natale, il pupazzo di neve, il palo del Polo Nord e l'albero, un piano alla volta. |
+| **Accensione** | 30–31 | Carica i regali, accendi e regola lo spettacolo. |
 
 <details>
-<summary><b>Guarda tutti i 30 passi in un'unica animazione</b> (5 MB)</summary>
+<summary><b>Guarda tutti i 31 passi in un'unica animazione</b> (5 MB)</summary>
 <br>
 <p align="center"><img src="images/assembly_all_steps.gif" alt="Tutti i passi di montaggio in un'animazione" width="100%"></p>
 </details>

@@ -37,7 +37,7 @@
 ## 🛠 Assembly guide
 
 <p align="center">
-  <a href="docs/pdf/Santas_Workshop_assembly_guide_EN.pdf"><img src="assets/guide_card.svg" alt="Assembly guide: 30 steps in 6 phases, English and Italian. Open the guide." width="100%"></a>
+  <a href="docs/pdf/Santas_Workshop_assembly_guide_EN.pdf"><img src="assets/guide_card.svg" alt="Assembly guide: 31 steps in 6 phases, English and Italian. Open the guide." width="100%"></a>
 </p>
 
 <p align="center">
@@ -46,7 +46,7 @@
   <a href="docs/index.html"><img src="assets/badges/interactive.svg" height="28" alt="Interactive guide"></a>
 </p>
 
-Thirty steps, from snapping the keys off the kit cards to loading the first gifts. Every step has its own animation, the list of parts with the plate they come from, and the actions to tick off. The interactive guide is a single page with an English / Italian switch: download [`docs/index.html`](docs/index.html) together with the `docs/img` folder and open it in a browser.
+Thirty-one steps, from snapping the keys off the kit cards to loading the first gifts. Every step has its own animation, the list of parts with the plate they come from, and the actions to tick off. The interactive guide is a single page with an English / Italian switch: download [`docs/index.html`](docs/index.html) together with the `docs/img` folder and open it in a browser.
 
 <p align="center">
   <img src="assets/tools.svg" alt="Tools: a 1.5 mm hex key for the kit M2.5 x 6 screws, a small Phillips screwdriver for the servo and centre screws, and the key press tool printed with the model. No glue and no soldering." width="100%">
@@ -56,13 +56,13 @@ Thirty steps, from snapping the keys off the kit cards to loading the first gift
 | :--- | :---: | :--- |
 | **Preparation** | 1–3 | Keys and the press tool, magnets in the gift ring and in the gifts. |
 | **Under the base** | 4–10 | Servos, switch, LED hubs and receiver, then the program and a first test. |
-| **Scene on top** | 11–19 | Pinion, tree base, gift ring, snow cover, workshop, lamp post, sleigh and the elf. |
-| **Lights and closing** | 20–24 | LEDs to the hubs, battery and bottom lid, gift drawer, charging door, USB plug. |
-| **Figures and tree** | 25–28 | Santa, the snowman, the North Pole sign post and the tree, tier by tier. |
-| **Switch on** | 29–30 | Load the gifts, switch on, and fine tune the show. |
+| **Scene on top** | 11–20 | Pinion, tree base, gift ring, snow cover, workshop, lamp post, sleigh and the elf. |
+| **Lights and closing** | 21–25 | LEDs to the hubs, battery and bottom lid, gift drawer, charging door, USB plug. |
+| **Figures and tree** | 26–29 | Santa, the snowman, the North Pole sign post and the tree, tier by tier. |
+| **Switch on** | 30–31 | Load the gifts, switch on, and fine tune the show. |
 
 <details>
-<summary><b>Watch all 30 steps in one animation</b> (5 MB)</summary>
+<summary><b>Watch all 31 steps in one animation</b> (5 MB)</summary>
 <br>
 <p align="center"><img src="images/assembly_all_steps.gif" alt="All assembly steps in one animation" width="100%"></p>
 </details>
