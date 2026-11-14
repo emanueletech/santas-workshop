@@ -2,6 +2,7 @@
 
 ## 2026-11-14
 
+- Firmware 2.5: `RING_SPEED` is now -30, because with +30 the real kit turned the ring clockwise.
 - Assembly guide now 31 steps: the lamp post is built in hand first, then set on the base; step 10 explains Thonny with screenshots; the tree base gets its LEDs first. All cables go on the receiver before it is screwed down.
 - Assembly guide: cable routes redrawn so no cable passes through a part; tools named in the guide (1.5 mm hex key for the kit M2.5 × 6 screws, small Phillips screwdriver for the servo screws and the centre screw).
 - Firmware 2.4 made compact (7 KB instead of 12 KB, same code): the core has little memory to compile it. The long explanations moved to firmware/README.md. Tested again on the real core.

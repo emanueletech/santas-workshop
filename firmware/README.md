@@ -1,6 +1,6 @@
 # Firmware
 
-`main.py` is the standalone program for the CyberBrick core on the receiver shield (ESP32-C3, MicroPython, Bambu `bbl` library). Current version: 2.4 (still to be tested on the real core and on the assembled diorama).
+`main.py` is the standalone program for the CyberBrick core on the receiver shield (ESP32-C3, MicroPython, Bambu `bbl` library). Current version: 2.5 (run on the real core from memory, still to be tested on the assembled diorama).
 
 It needs no remote and no buttons: switch on and the show starts. `main.py` is kept short on purpose, because the core has little memory to compile it: every setting has a one-line comment there, and this page explains the rest.
 
@@ -30,7 +30,7 @@ They are at the top of `main.py`.
 
 | Setting | Default | What it does |
 | --- | --- | --- |
-| `RING_SPEED` | 30 | Ring servo speed, -100 to 100. Seen from above the ring must turn counter-clockwise, so the gifts move from the front towards the elf. Flip the sign if it does not. Slower means more time between two gifts. |
+| `RING_SPEED` | -30 | Ring servo speed, -100 to 100. Seen from above the ring must turn counter-clockwise, so the gifts move from the front towards the elf. On the real kit that is -30. Flip the sign if it does not. Slower means more time between two gifts. |
 | `LOAD_S` | 25 | Seconds to load the gifts after switching on. |
 | `RING_TURN_S` | 60.0 | Seconds for one full turn of the ring at `RING_SPEED`. Time it with a phone and a charged battery. Every stop depends on it. |
 | `ELF_WORK` | 90 | Elf servo angle with the arm across the track (the assembly position). |
@@ -85,4 +85,4 @@ To go back to the official CyberBrick app, restore the original `boot.py`.
 
 ## Test status
 
-Version 2.4 ran on the real core from memory (14 November 2026), without servos and LEDs connected: a fast run with a feint before every gift and a normal run, both with no errors. Saving it on the board with the `boot.py` change, and a run with the whole diorama connected, are still to be done. See the [roadmap](../ROADMAP.md).
+Version 2.4 (same code as 2.5 apart from the ring direction) ran on the real core from memory (14 November 2026), without servos and LEDs connected: a fast run with a feint before every gift and a normal run, both with no errors. Saving it on the board with the `boot.py` change, and a run with the whole diorama connected, are still to be done. See the [roadmap](../ROADMAP.md).

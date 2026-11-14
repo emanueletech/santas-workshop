@@ -88,7 +88,7 @@ Everything comes from the Bambu Lab CyberBrick range and is plugged with the kit
 
 ## 💾 Firmware
 
-[`firmware/main.py`](firmware/main.py) is a standalone MicroPython program for the CyberBrick core. It runs the whole show on its own: light scenes, ring stops and the elf's arm at random moments, with every timing in one settings block at the top. Version 2.4 is still to be tested on the assembled diorama. Wiring and loading steps are in [`firmware/README.md`](firmware/README.md).
+[`firmware/main.py`](firmware/main.py) is a standalone MicroPython program for the CyberBrick core. It runs the whole show on its own: light scenes, ring stops and the elf's arm at random moments, with every timing in one settings block at the top. Version 2.5 is still to be tested on the assembled diorama. Wiring and loading steps are in [`firmware/README.md`](firmware/README.md).
 
 ## 📸 From the workbench
 

@@ -88,7 +88,7 @@ Tutto viene dalla linea Bambu Lab CyberBrick e si collega con i cavi del kit, se
 
 ## 💾 Firmware
 
-[`firmware/main.py`](firmware/main.py) è un programma MicroPython autonomo per il core CyberBrick. Gestisce da solo tutto lo spettacolo: luci, fermate dell'anello e braccio dell'elfo in momenti casuali, con tutti i tempi in un unico blocco di impostazioni in cima al file. La versione 2.4 è ancora da provare sul diorama montato. Collegamenti e caricamento sono in [`firmware/README.md`](firmware/README.md) (in inglese).
+[`firmware/main.py`](firmware/main.py) è un programma MicroPython autonomo per il core CyberBrick. Gestisce da solo tutto lo spettacolo: luci, fermate dell'anello e braccio dell'elfo in momenti casuali, con tutti i tempi in un unico blocco di impostazioni in cima al file. La versione 2.5 è ancora da provare sul diorama montato. Collegamenti e caricamento sono in [`firmware/README.md`](firmware/README.md) (in inglese).
 
 ## 📸 Dal banco di lavoro
 
