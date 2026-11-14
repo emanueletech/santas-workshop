@@ -31,7 +31,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/stats_it.svg" alt="150 pezzi stampati, 13 piatti, 24,5 ore e 730 g di PLA, niente colla, supporti o AMS" width="100%">
+  <img src="assets/stats_it.svg" alt="151 pezzi stampati, 13 piatti, 24,6 ore e 736 g di PLA, niente colla, supporti o AMS" width="100%">
 </p>
 
 ## 🛠 Guida di montaggio

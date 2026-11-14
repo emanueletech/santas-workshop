@@ -31,7 +31,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/stats.svg" alt="150 printed parts, 13 plates, 24.5 hours and 730 g of PLA, no glue, supports or AMS" width="100%">
+  <img src="assets/stats.svg" alt="151 printed parts, 13 plates, 24.6 hours and 736 g of PLA, no glue, supports or AMS" width="100%">
 </p>
 
 ## 🛠 Assembly guide

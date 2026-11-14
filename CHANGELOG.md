@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-14
+
+- Base reprint round: the workshop LED now goes in from below into a seat in the base, held by a new white U clip (151 printed parts). The lantern and street lamp glasses have four small posts that hold their LEDs. Screw holes for the kit M2.5 screws are 2.3 mm. Guide steps 15, 16, 17, 19 and 20 updated; print time about 24.6 h and 736 g of PLA.
+
 ## 2026-11-13
 
 - Firmware 2.2: the elf works at random moments. A random wait of 8 to 25 seconds before each gift and, now and then, a full parade turn of the ring with the arm out. A simulation of 200,000 switch-ons found no case where the arm comes down on a gift or a gift is left on the ring. Run on the real core without servos connected; still to be tested on the assembled diorama.
