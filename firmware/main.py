@@ -1,4 +1,4 @@
-# Santa's Workshop - standalone program for the CyberBrick core (MicroPython, bbl library). v2.5
+# Santa's Workshop - standalone program for the CyberBrick core (MicroPython, bbl library). v2.6
 # Switch on and the diorama runs by itself. Settings below; the show, wiring, upload steps and every
 # setting are explained in firmware/README.md (github.com/emanueletech/santas-workshop).
 # Save this file on the core as /main.py and start it from boot.py with: import main; main.main()
@@ -16,9 +16,9 @@ from bbl.servos import ServosController
 from bbl.leds import LEDController
 
 # ---------------------------------------------------------------- SETTINGS
-RING_SPEED = -30         # -100..100; -30 = ring counter-clockwise seen from above on the real kit (flip the sign if not)
+RING_SPEED = -20         # -100..100; minus = ring counter-clockwise seen from above on the real kit; lower = quieter
 LOAD_S = 25              # seconds to load the gifts after switching on
-RING_TURN_S = 60.0       # seconds for ONE full ring turn: time it with a phone, the stops depend on it
+RING_TURN_S = 17.7       # seconds for ONE full ring turn at RING_SPEED (measured on the real kit at -20: 2 turns 35.4 s)
 ELF_WORK = 90            # elf servo angle with the arm across the track
 ELF_DIR = 1              # +1 or -1: side the arm swings out (towards Santa, away from the tree)
 ELF_OUT = 28             # degrees from ELF_WORK to the rest position over the snow
@@ -30,6 +30,7 @@ STOP_TRIM_S = 0.0        # added to every ring move if the stops come late or ea
 START_LAG_MS = 0         # extra ms per ring move for the servo start
 ELF_STEP_SPEED = 25      # arm swing speed (bbl stepping)
 BRIGHT = 0.6             # 0..1 LED brightness (lower = longer battery)
+LANTERN_BRIGHT = 0.35    # sleigh and elf lanterns, part of BRIGHT (they sit close to the eye)
 WARM = (255, 140, 40)    # workshop
 LAMP = (255, 200, 110)   # street lamp and lanterns
 STAR = (255, 189, 49)    # tree star
@@ -47,6 +48,9 @@ PAUSE_MAX_S = 25
 FEINT_CHANCE = 45        # % chance the elf fakes before a gift (0 = never)
 FEINT_MAX = 2            # most feints before one gift
 FEINT_HOLD_S = 1         # seconds the arm stays in during a feint
+GIFT_FLASH_MS = 900      # baubles blink when a gift lands in the sleigh (0 = no blink)
+DONE_BLINK_S = 60        # red blink when all gifts are out, then the normal lights stay on
+ELF_RELEASE = True       # arm at rest: servo signal off, no holding buzz (the arm has no load there)
 L_WORKSHOP, L_LAMP1 = 0, 1                        # left hub (D2): socket number - 1
 L_STAR, L_BAUBLES, L_SLEIGH, L_ELF = 0, 1, 2, 3   # right hub (D1)
 # --------------------------------------------------------------------------
@@ -54,6 +58,7 @@ L_STAR, L_BAUBLES, L_SLEIGH, L_ELF = 0, 1, 2, 3   # right hub (D1)
 servos = ServosController()
 left = LEDController("LED2").np
 right = LEDController("LED1").np
+_flash = [utime.ticks_ms()]
 
 
 def scale(rgb, k):
@@ -84,8 +89,11 @@ def leds(t_ms, state, done=0):
     left[L_WORKSHOP] = scale(WARM, flicker(t_ms, 90, 7919))
     left[L_LAMP1] = scale(LAMP, 1.0)
     right[L_STAR] = scale(STAR, star_level(t_ms) * TREE_BRIGHT / BRIGHT)
-    right[L_BAUBLES] = scale(BAUBLES, BAUBLE_LEVELS[done] * TREE_BRIGHT / BRIGHT)
-    lantern = scale(LAMP, flicker(t_ms, 110, 104729))
+    k = BAUBLE_LEVELS[done]
+    if utime.ticks_diff(_flash[0], utime.ticks_ms()) > 0 and (t_ms // 150) % 2:
+        k = 0.0
+    right[L_BAUBLES] = scale(BAUBLES, k * TREE_BRIGHT / BRIGHT)
+    lantern = scale(LAMP, flicker(t_ms, 110, 104729) * LANTERN_BRIGHT)
     if state == 'load':
         g = scale((0, 255, 0), 1.0) if (t_ms // 400) % 2 else (0, 0, 0)
         right[L_ELF] = g; right[L_SLEIGH] = g
@@ -121,6 +129,12 @@ def arm(angle, t0, state, done):
     wait(ELF_SWING_MS, t0, state, done)
 
 
+def arm_rest(rest, t0, state, done):
+    arm(rest, t0, state, done)
+    if ELF_RELEASE:
+        servos.stop(3)                           # quiet: no holding torque needed over the snow
+
+
 def rand_ms(lo, hi):
     return int((lo + (hi - lo) * random.getrandbits(10) / 1023.0) * 1000)
 
@@ -134,7 +148,7 @@ def main():
         servos.set_angle(3, ELF_WORK)            # arm across the track; bbl needs set_angle before stepping
         wait(ELF_SWING_MS, t0, 'load', 0)
         wait(ALIGN_S * 1000, t0, 'load')
-        arm(rest, t0, 'load', 0)                 # arm out: load the gifts (green lanterns)
+        arm_rest(rest, t0, 'load', 0)            # arm out: load the gifts (green lanterns)
         wait(LOAD_S * 1000, t0, 'load')
         ring_turn(FIRST_DEG, t0, 0)              # empty spot in front of the elf
         for done in range(1, 7):
@@ -146,13 +160,15 @@ def main():
                 wait(pause // (feints + 1), t0, 'show', done - 1)
                 arm(ELF_WORK, t0, 'show', done - 1)
                 wait(FEINT_HOLD_S * 1000, t0, 'show', done - 1)
-                arm(rest, t0, 'show', done - 1)
+                arm_rest(rest, t0, 'show', done - 1)
             wait(pause // (feints + 1), t0, 'show', done - 1)
             arm(ELF_WORK, t0, 'show', done - 1)
             ring_turn(STATION_DEG, t0, done - 1) # one gift drops into the sleigh
-            arm(rest, t0, 'show', done)
+            _flash[0] = utime.ticks_add(utime.ticks_ms(), GIFT_FLASH_MS)
+            arm_rest(rest, t0, 'show', done)
+        wait(DONE_BLINK_S * 1000, t0, 'done')   # red: all gifts are in the sleigh
         while True:
-            wait(1000, t0, 'done')
+            wait(1000, t0, 'show', 6)            # then the normal lights stay on
     finally:
         servos.stop(1); servos.stop(2); servos.stop(3)
         left.fill((0, 0, 0)); right.fill((0, 0, 0)); left.write(); right.write()

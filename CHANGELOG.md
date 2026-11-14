@@ -2,6 +2,7 @@
 
 ## 2026-11-14
 
+- Firmware 2.6: quieter ring (`RING_SPEED` -20) with the turn time measured on the real kit (`RING_TURN_S` 17.7 s; the old 60 s estimate made several gifts drop at once). Dimmer lanterns, baubles blink when a gift lands, red blink for one minute at the end and then the lights stay on, elf servo released at rest so it does not buzz.
 - Firmware 2.5: `RING_SPEED` is now -30, because with +30 the real kit turned the ring clockwise.
 - Assembly guide now 31 steps: the lamp post is built in hand first, then set on the base; step 10 explains Thonny with screenshots; the tree base gets its LEDs first. All cables go on the receiver before it is screwed down.
 - Assembly guide: cable routes redrawn so no cable passes through a part; tools named in the guide (1.5 mm hex key for the kit M2.5 × 6 screws, small Phillips screwdriver for the servo screws and the centre screw).
