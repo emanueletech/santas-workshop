@@ -2,6 +2,8 @@
 
 ## 2026-11-14
 
+- Assembly guide: cable routes redrawn so no cable passes through a part; tools named in the guide (1.5 mm hex key for the kit M2.5 × 6 screws, small Phillips screwdriver for the servo screws and the centre screw).
+- Firmware 2.4 made compact (7 KB instead of 12 KB, same code): the core has little memory to compile it. The long explanations moved to firmware/README.md. Tested again on the real core.
 - Firmware 2.4: one gift at a time at random moments, no parade turn. Before a gift the elf sometimes fakes once or twice: the arm swings into the empty spot and back out, the ring stays still and nothing drops. New "How it runs" animation.
 - Base reprint round: the workshop LED now goes in from below into a seat in the base, held by a new white U clip (151 printed parts). The lantern and street lamp glasses have four small posts that hold their LEDs. Screw holes for the kit M2.5 screws are 2.3 mm. Guide steps 15, 16, 17, 19 and 20 updated; print time about 24.6 h and 736 g of PLA.
 
