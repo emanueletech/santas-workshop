@@ -1,10 +1,14 @@
+<!doctype html>
+<meta charset="utf-8">
 <title>Santa's Workshop · Assembly</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,800;1,900&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
 <style>
 /* Guida di montaggio IT/EN (generata da guida_web.py: non modificare index.html a mano, modifica questo modello).
-   Layout: binario dei passi a sinistra (striscia orizzontale su telefono), a destra il "banco" con animazione grande, poi azioni spuntabili e pezzi necessari. */
+   Layout: striscia dei passi in alto (fissa mentre si scorre), sotto il "banco" a tutta larghezza con animazione grande, poi azioni spuntabili e pezzi necessari.
+   Un passo si segna fatto quando si spuntano tutte le azioni oppure quando si va avanti con Avanti / freccia destra / Fine. */
 :root {
   --bg: #F6F4F0; --panel: #ffffff; --ink: #121316; --muted: #5b5d64; --line: #e0dcd4;
   --brand: #FF5A1F; --blue: #1E80E6; --on-brand: #121316;
@@ -53,19 +57,25 @@ header.top .prog .bar i { background: #FF5A1F }
 .prog .bar { width: 140px; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden }
 .prog .bar i { display: block; height: 100%; background: var(--pine); width: 0; transition: width .3s }
 
-.grid { display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: 28px; margin-top: 20px; align-items: start }
-nav.rail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); max-height: calc(100vh - 24px); overflow-y: auto; padding-right: 4px }
-.rail h2 { font-family: var(--f-mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 14px 0 6px; font-weight: 700 }
-.rail h2:first-child { margin-top: 0 }
-.rail ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px }
-.rail button { width: 100%; display: grid; grid-template-columns: 2.1em 1fr auto; align-items: center; gap: 8px; text-align: left; background: none; border: 0; padding: 6px 8px; border-radius: 8px; cursor: pointer; font-size: 0.92rem; line-height: 1.25 }
-.rail button:hover { background: var(--panel) }
-.rail button[aria-current="step"] { background: var(--ink); color: var(--bg); box-shadow: inset 4px 0 0 var(--brand) }
+.grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; margin-top: 14px; align-items: start }
+nav.rail { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); overflow-x: auto; overflow-y: hidden; padding: 8px 0 10px; display: flex; align-items: center; gap: 6px; scrollbar-width: thin; border-bottom: 1px solid var(--line) }
+.rail h2 { display: none }
+.rail ol { list-style: none; margin: 0; padding: 0; display: flex; gap: 6px }
+.rail li { flex: none }
+.rail .sep { flex: none; width: 1px; height: 22px; background: var(--line); margin: 0 4px }
+.rail button { display: flex; align-items: center; gap: 6px; white-space: nowrap; padding: 6px 10px; border: 1px solid var(--line); background: var(--panel); border-radius: 999px; cursor: pointer; font-size: 0.85rem; line-height: 1.2; color: var(--ink) }
+.rail button:hover { border-color: var(--brand) }
+.rail .lbl { display: none }
+.rail button[aria-current="step"] { background: var(--ink); color: var(--bg); border-color: var(--ink) }
+.rail button[aria-current="step"] .lbl { display: inline; max-width: 22ch; overflow: hidden; text-overflow: ellipsis }
 .rail .num { font-family: var(--f-mono); font-weight: 700; font-size: 0.8rem; color: var(--berry) }
 .rail button[aria-current="step"] .num { color: inherit }
-.rail .ok { width: 1.1em; height: 1.1em; border-radius: 50%; border: 1.5px solid var(--line) }
-.rail .done .ok { background: var(--pine); border-color: var(--pine) }
-.rail .tag { font-family: var(--f-mono); font-size: 0.66rem; color: var(--muted); margin-left: 4px }
+.rail .ok { display: none }
+.rail .done button:not([aria-current]) { background: var(--pine-soft); border-color: var(--pine) }
+.rail .done .num { color: var(--pine) }
+.rail .done .ok { display: inline; color: var(--pine); font-weight: 700; font-size: 0.8rem }
+.rail .done button[aria-current] .ok { color: inherit }
+.rail .tag { display: none }
 
 main { min-width: 0 }
 .head { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 18px; align-items: end; margin-bottom: 14px }
@@ -75,7 +85,7 @@ main { min-width: 0 }
 .head h2 { font-family: var(--f-display); font-style: italic; font-weight: 800; letter-spacing: -0.01em; font-size: clamp(1.5rem, 3.2vw, 2.15rem); line-height: 1.1; margin: 0; text-wrap: balance }
 
 .stage { background: var(--stage); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; position: relative }
-.stage img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; max-width: 100% }
+.stage img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; max-width: 100%; max-height: max(420px, calc(100vh - 230px)) }
 .stage img.schema { aspect-ratio: auto; padding: 18px }
 .stage .tools { position: absolute; right: 10px; bottom: 10px; display: flex; gap: 6px }
 .stage .tools button { background: rgba(255, 255, 255, 0.92); color: #121316; border: 1px solid #d0ccc4; border-radius: 999px; padding: 6px 12px; font-size: 0.82rem; cursor: pointer; font-weight: 700 }
@@ -135,17 +145,10 @@ table.viti tr.tot td { border-bottom: 0; font-weight: 700 }
 .start { margin-top: 18px; background: var(--brand); color: var(--on-brand); border: 0; border-radius: 10px; padding: 12px 20px; font-weight: 700; cursor: pointer; font-size: 1rem }
 
 @media (max-width: 900px) {
-  .grid { grid-template-columns: minmax(0, 1fr); gap: 16px }
-  nav.rail { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); max-height: none; overflow-x: auto; overflow-y: hidden; padding: 8px 0; margin-inline: -4px; display: flex; gap: 6px; scrollbar-width: thin }
-  .rail h2, .rail .lbl, .rail .tag { display: none }
-  .rail ol { display: flex; gap: 6px }
-  .rail li { flex: none }
-  .rail button { display: flex; gap: 6px; white-space: nowrap; padding: 6px 10px; border: 1px solid var(--line); background: var(--panel) }
-  .rail .ok { display: none }
-  .rail .done button:not([aria-current]) { background: var(--pine-soft) }
   .cols, .intro { grid-template-columns: minmax(0, 1fr) }
   header.top { padding: 14px 16px } .brandrow { padding-left: 16px } .brandrow .logo { width: 104px } header.top .side { padding-right: 16px; padding-left: 16px }
   body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg) }
+  .rail button[aria-current="step"] .lbl { max-width: 14ch }
 }
 @media (prefers-reduced-motion: reduce) { .prog .bar i { transition: none } }
 </style>
@@ -172,12 +175,12 @@ const UI = {
         fatti: 'passi fatti', prima: 'Prima di iniziare', prep: 'Introduzione', fare: 'Cosa fare', serve: 'Ti serve', att: 'Attenzione',
         anim: 'Animazione', ris: 'Risultato', rep: 'Riavvia', indietro: '← Indietro', passo: 'Passo', fine: 'Fine', torna: "Torna all'inizio",
         inizia: 'Inizia dal passo 1', finito: 'Il laboratorio montato: albero, anello dei regali, officina, slitta, elfo e Babbo Natale.',
-        altAnim: 'Animazione del passo', altFin: 'Il diorama finito', kit: 'Viti e magneti del kit', spunta: 'Spunta ogni azione mentre la fai: il passo si segna da solo come fatto. I progressi restano salvati in questo browser. Il pulsante Risultato mostra il passo finito.' },
+        altAnim: 'Animazione del passo', altFin: 'Il diorama finito', kit: 'Viti e magneti del kit', spunta: 'Spunta le azioni mentre le fai: quando passi al passo dopo, quello appena finito si segna da solo come fatto. I progressi restano salvati in questo browser. Il pulsante Risultato mostra il passo finito.' },
   en: { tit: "Santa's Workshop", sub: 'Step-by-step assembly guide · ' + DATI.versione + ' · CyberBrick', doc: "Santa's Workshop · Assembly",
         fatti: 'steps done', prima: 'Before you start', prep: 'Introduction', fare: 'What to do', serve: 'You need', att: 'Warning',
         anim: 'Animation', ris: 'Result', rep: 'Replay', indietro: '← Back', passo: 'Step', fine: 'End', torna: 'Back to the start',
         inizia: 'Start from step 1', finito: 'The finished workshop: tree, gift ring, workshop, sleigh, elf and Santa.',
-        altAnim: 'Animation of step', altFin: 'The finished diorama', kit: 'Kit screws and magnets', spunta: 'Tick each action as you do it: the step marks itself as done. Progress is saved in this browser. The Result button shows the finished step.' }
+        altAnim: 'Animation of step', altFin: 'The finished diorama', kit: 'Kit screws and magnets', spunta: 'Tick the actions as you do them: when you move on to the next step, the one you just finished marks itself as done. Progress is saved in this browser. The Result button shows the finished step.' }
 };
 const KEY = 'santa-workshop-assembly-v2';
 let stato = { fatti: {}, azioni: {}, lang: null };
@@ -201,13 +204,13 @@ function testata() {
 function rail() {
   const u = UI[L], fasi = [];
   PASSI.forEach(p => { let f = fasi.find(x => x.t === t(p.fase)); if (!f) fasi.push(f = { t: t(p.fase), ps: [] }); f.ps.push(p); });
-  let h = `<h2>${esc(u.prep)}</h2><ol><li><button data-id="inizio" ${cur === 'inizio' ? 'aria-current="step"' : ''}><span class="num">··</span><span>${esc(u.prima)}</span><span></span></button></li></ol>`;
+  let h = `<ol><li><button data-id="inizio" ${cur === 'inizio' ? 'aria-current="step"' : ''}><span class="num">··</span><span>${esc(u.prima)}</span><span></span></button></li></ol>`;
   for (const f of fasi) {
-    h += `<h2>${esc(f.t)}</h2><ol>` + f.ps.map(p => `<li class="${stato.fatti[p.n] ? 'done' : ''}"><button data-id="passo-${p.n}" ${cur === 'passo-' + p.n ? 'aria-current="step"' : ''} title="${esc(t(p.titolo))}"><span class="num">${pad(p.n)}</span><span class="lbl">${esc(t(p.titolo))}</span><span class="ok"></span></button></li>`).join('') + '</ol>';
+    h += `<span class="sep" title="${esc(f.t)}" aria-hidden="true"></span><ol aria-label="${esc(f.t)}">` + f.ps.map(p => `<li class="${stato.fatti[p.n] ? 'done' : ''}"><button data-id="passo-${p.n}" ${cur === 'passo-' + p.n ? 'aria-current="step"' : ''} title="${esc(t(p.titolo))}"><span class="num">${pad(p.n)}</span><span class="lbl">${esc(t(p.titolo))}</span><span class="ok" aria-hidden="true">✓</span></button></li>`).join('') + '</ol>';
   }
   const r = document.getElementById('rail'); r.innerHTML = h;
   r.querySelectorAll('button').forEach(b => b.onclick = () => vai(b.dataset.id));
-  const a = r.querySelector('[aria-current]'); if (a && matchMedia('(max-width: 900px)').matches) a.scrollIntoView({ inline: 'center', block: 'nearest' });
+  const a = r.querySelector('[aria-current]'); if (a) r.scrollTo({ left: a.offsetLeft - r.clientWidth / 2 + a.offsetWidth / 2, behavior: lento ? 'auto' : 'smooth' });
   const n = PASSI.filter(p => stato.fatti[p.n]).length;
   document.getElementById('pbar').style.width = (100 * n / PASSI.length) + '%';
   document.getElementById('ptxt').textContent = `${n} / ${PASSI.length} ${u.fatti}`;
@@ -267,6 +270,8 @@ function vai(id, scroll = true) {
   if (scroll) window.scrollTo({ top: 0, behavior: lento ? 'auto' : 'smooth' });
 }
 
+function fatto(p) { stato.fatti[p.n] = true; salva(); }
+
 function bind(p) {
   const img = document.getElementById('media');
   const set = a => { anim = a; img.src = a ? p.gif : p.png; document.getElementById('b-anim').setAttribute('aria-pressed', a); document.getElementById('b-ris').setAttribute('aria-pressed', !a); document.getElementById('b-rep').hidden = !a; };
@@ -278,14 +283,14 @@ function bind(p) {
   document.querySelectorAll('ol.todo input').forEach((c, k) => c.onchange = () => {
     const az = stato.azioni[p.n] = stato.azioni[p.n] || [];
     az[k] = c.checked;
-    stato.fatti[p.n] = p.azioni.every((_, j) => az[j]);
+    if (p.azioni.every((_, j) => az[j])) stato.fatti[p.n] = true;
     salva(); rail();
   });
   const pr = document.getElementById('b-prev'), nx = document.getElementById('b-next'), fi = document.getElementById('b-fine');
   const idx = ORD.indexOf('passo-' + p.n);
   if (pr) pr.onclick = () => vai(ORD[idx - 1]);
-  if (nx) nx.onclick = () => vai(ORD[idx + 1]);
-  if (fi) fi.onclick = () => vai('inizio');
+  if (nx) nx.onclick = () => { fatto(p); vai(ORD[idx + 1]); };
+  if (fi) fi.onclick = () => { fatto(p); vai('inizio'); };
 }
 
 const lingua = l => { L = l; stato.lang = l; salva(); vai(cur, false); };
@@ -294,7 +299,7 @@ document.getElementById('l-en').onclick = () => lingua('en');
 document.addEventListener('keydown', e => {
   if (e.target.closest('input, textarea') || e.altKey || e.metaKey || e.ctrlKey) return;
   const i = ORD.indexOf(cur);
-  if (e.key === 'ArrowRight' && i < ORD.length - 1) vai(ORD[i + 1]);
+  if (e.key === 'ArrowRight' && i < ORD.length - 1) { const p = PASSI.find(x => 'passo-' + x.n === cur); if (p) fatto(p); vai(ORD[i + 1]); }
   if (e.key === 'ArrowLeft' && i > 0) vai(ORD[i - 1]);
 });
 vai(location.hash.slice(1) || 'inizio', false);
