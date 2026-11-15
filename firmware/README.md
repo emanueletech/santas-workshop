@@ -60,16 +60,14 @@ Hub sockets are numbered from the white input connector.
 
 ## Loading the program
 
+This folder has the two files the core needs: [`main.py`](main.py) (the show) and [`boot.py`](boot.py) (starts the show at power-on). [`santa_workshop_mpy.zip`](santa_workshop_mpy.zip) holds the same two files in one download.
+
 1. Connect the core to a computer with a USB-C data cable, through the window in the front of the base.
-2. Open the board in Thonny (or another MicroPython editor) and save `main.py` on the board as `/main.py`.
-3. To start it at power-on, open the board's `boot.py`, keep a copy of the original, and replace the call to the official app with:
+2. Open the board in Thonny (or another MicroPython editor). Step 10 of the [assembly guide](https://emanueletech.github.io/santas-workshop/) shows every click.
+3. Save `main.py` and `boot.py` on the core, in its main folder, with the same names. Before you overwrite `boot.py`, keep a copy of the original.
+4. Switch off and on again: the show starts by itself.
 
-   ```python
-   import main
-   main.main()
-   ```
-
-To go back to the official CyberBrick app, restore the original `boot.py`.
+To go back to the official CyberBrick app, put the original `boot.py` back on the core.
 
 ## Settings to check on the first run
 

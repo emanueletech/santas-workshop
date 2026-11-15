@@ -120,7 +120,7 @@ Everything comes from the Bambu Lab CyberBrick range and is plugged with the kit
 | :--- | :--- |
 | [`docs/`](docs/) | Interactive assembly guide (`index.html`) and its images. |
 | [`docs/pdf/`](docs/pdf/) | The same guide as printable PDF, one file per language. |
-| [`firmware/`](firmware/) | MicroPython program for the CyberBrick core and how to load it. |
+| [`firmware/`](firmware/) | MicroPython program for the CyberBrick core (`main.py` and `boot.py`, also as one zip) and how to load it. |
 | [`images/`](images/) | Renders, animations, photos of the printed diorama and of the assembly. |
 | [`assets/`](assets/) | Banner, logo and the graphics of this page. |
 

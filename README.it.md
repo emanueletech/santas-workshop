@@ -120,7 +120,7 @@ Tutto viene dalla linea Bambu Lab CyberBrick e si collega con i cavi del kit, se
 | :--- | :--- |
 | [`docs/`](docs/) | Guida di montaggio interattiva (`index.html`) e le sue immagini. |
 | [`docs/pdf/`](docs/pdf/) | La stessa guida in PDF da stampare, un file per lingua. |
-| [`firmware/`](firmware/) | Programma MicroPython per il core CyberBrick e come caricarlo. |
+| [`firmware/`](firmware/) | Programma MicroPython per il core CyberBrick (`main.py` e `boot.py`, anche in un unico zip) e come caricarlo. |
 | [`images/`](images/) | Render, animazioni, foto del diorama stampato e del montaggio. |
 | [`assets/`](assets/) | Banner, logo e grafiche di questa pagina. |
 
