@@ -2,6 +2,7 @@
 
 ## 2026-11-15
 
+- Firmware 2.8: shorter, steadier stops (`START_LAG_MS` 250), the arm holds for 1.5 s after the ring stops so the gift lands first (`DROP_HOLD_MS`), brighter tree (star twinkles between 55% and 100%, baubles never go below 15%).
 - Firmware 2.7: `RING_SPEED` back to -30, because at -20 the real kit stalls with six gifts on the ring. `RING_TURN_S` 9.46 s, measured at -30 with six gifts (two turns in 18.9 s).
 
 ## 2026-11-14

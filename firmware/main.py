@@ -1,4 +1,4 @@
-# Santa's Workshop - standalone program for the CyberBrick core (MicroPython, bbl library). v2.7
+# Santa's Workshop - standalone program for the CyberBrick core (MicroPython, bbl library). v2.8
 # Switch on and the diorama runs by itself. Settings below; the show, wiring, upload steps and every
 # setting are explained in firmware/README.md (github.com/emanueletech/santas-workshop).
 # Save this file on the core as /main.py and start it from boot.py with: import main; main.main()
@@ -27,8 +27,9 @@ ALIGN_S = 3              # seconds the arm stays across the track at power-on
 FIRST_DEG = 29.9         # first ring move: brings the empty spot in front of the elf
 STATION_DEG = 360.0 / 7  # one spot
 STOP_TRIM_S = 0.0        # added to every ring move if the stops come late or early
-START_LAG_MS = 0         # extra ms per ring move for the servo start
+START_LAG_MS = 250       # extra ms per ring move: the ring starts from standstill at every stop
 ELF_STEP_SPEED = 25      # arm swing speed (bbl stepping)
+DROP_HOLD_MS = 1500      # arm stays across the track after the ring stops, so the gift lands before it moves
 BRIGHT = 0.6             # 0..1 LED brightness (lower = longer battery)
 LANTERN_BRIGHT = 0.35    # sleigh and elf lanterns, part of BRIGHT (they sit close to the eye)
 WARM = (255, 140, 40)    # workshop
@@ -36,10 +37,11 @@ LAMP = (255, 200, 110)   # street lamp and lanterns
 STAR = (255, 189, 49)    # tree star
 BAUBLES = (255, 46, 24)  # tree baubles (red on purpose: the green tiers turn it gold)
 TREE_BRIGHT = 1.0        # tree LEDs power
-BAUBLE_LEVELS = (1.0, 0.63, 0.36, 0.18, 0.08, 0.02, 0.0)   # baubles after 0..6 gifts
+BAUBLE_LEVELS = (1.0, 0.82, 0.66, 0.5, 0.36, 0.24, 0.15)  # baubles after 0..6 gifts
 STAR_MODE = 'twinkle'    # 'twinkle', 'blink' or 'steady'
 STAR_BREATH_MS = 2400    # twinkle: one slow breath
-STAR_LOW = 0.35          # twinkle: dimmest point
+STAR_LOW = 0.55          # twinkle: dimmest point
+STAR_HIGH = 1.0          # twinkle: brightest point
 STAR_SPARKLE_MS = 5300   # twinkle: a short sparkle this often
 STAR_BLINK_MS = 600      # blink: on and off time
 SPOTS = 7                # gift spots on the ring (6 gifts + 1 empty)
@@ -63,7 +65,7 @@ _flash = [utime.ticks_ms()]
 
 def scale(rgb, k):
     k *= BRIGHT
-    return (int(rgb[0] * k), int(rgb[1] * k), int(rgb[2] * k))
+    return tuple(min(255, int(c * k)) for c in rgb)
 
 
 def flicker(t_ms, period, seed):
@@ -78,7 +80,7 @@ def star_level(t_ms):
         return 1.0 if (t_ms // STAR_BLINK_MS) % 2 == 0 else 0.0
     ph = (t_ms % STAR_BREATH_MS) / STAR_BREATH_MS
     tri = 1.0 - abs(2.0 * ph - 1.0)
-    k = STAR_LOW + (0.8 - STAR_LOW) * tri * tri * (3 - 2 * tri)
+    k = STAR_LOW + (STAR_HIGH - STAR_LOW) * tri * tri * (3 - 2 * tri)
     sp = t_ms % STAR_SPARKLE_MS
     if sp < 90 or 180 <= sp < 260:
         k = 1.0
@@ -165,6 +167,7 @@ def main():
             arm(ELF_WORK, t0, 'show', done - 1)
             ring_turn(STATION_DEG, t0, done - 1) # one gift drops into the sleigh
             _flash[0] = utime.ticks_add(utime.ticks_ms(), GIFT_FLASH_MS)
+            wait(DROP_HOLD_MS, t0, 'show', done - 1)
             arm_rest(rest, t0, 'show', done)
         wait(DONE_BLINK_S * 1000, t0, 'done')   # red: all gifts are in the sleigh
         while True:

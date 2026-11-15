@@ -1,6 +1,6 @@
 # Firmware
 
-`main.py` is the standalone program for the CyberBrick core on the receiver shield (ESP32-C3, MicroPython, Bambu `bbl` library). Current version: 2.7 (ring speed and turn time measured on the real kit, still to be tested as a full show on the assembled diorama).
+`main.py` is the standalone program for the CyberBrick core on the receiver shield (ESP32-C3, MicroPython, Bambu `bbl` library). Current version: 2.8 (ring speed and turn time measured on the real kit, still to be tested as a full show on the assembled diorama).
 
 It needs no remote and no buttons: switch on and the show starts. `main.py` is kept short on purpose, because the core has little memory to compile it: every setting has a one-line comment there, and this page explains the rest.
 
@@ -39,14 +39,16 @@ They are at the top of `main.py`.
 | `ELF_SWING_MS` | 1600 | Time for one arm swing. The ring is always still meanwhile. |
 | `ALIGN_S` | 3 | Seconds the arm stays across the track at power-on, to check the assembly angle. |
 | `FIRST_DEG` | 29.9 | First ring move, from the loading position to the stop with the empty spot in front of the elf. |
-| `STOP_TRIM_S`, `START_LAG_MS` | 0 | Small corrections added to every ring move if the stops come early or late. |
+| `STOP_TRIM_S` | 0 | Small correction added to every ring move if the stops come early or late. |
+| `START_LAG_MS` | 250 | Extra time for every ring move, because the ring starts from standstill at each stop. |
+| `DROP_HOLD_MS` | 1500 | The arm stays across the track this long after the ring stops, so the gift lands before the arm moves back. |
 | `ELF_STEP_SPEED` | 25 | Arm swing speed (bbl stepping speed, about 39 degrees per second). |
 | `BRIGHT` | 0.6 | Overall LED brightness, 0 to 1. Lower means longer battery life. |
 | `LANTERN_BRIGHT` | 0.35 | Sleigh and elf lanterns, as a part of `BRIGHT`: they sit close to the eye. |
 | `WARM`, `LAMP`, `STAR`, `BAUBLES` | | Colours of the workshop, lamps and lanterns, tree star and baubles. The bauble colour is nearly red on purpose: the green tree tiers tint it, and it comes out warm gold. |
 | `TREE_BRIGHT` | 1.0 | Power of the two tree LEDs. |
-| `BAUBLE_LEVELS` | | Bauble brightness after 0 to 6 gifts, in equal steps for the eye. |
-| `STAR_MODE` | `'twinkle'` | `'twinkle'` (slow breathing with a short sparkle), `'blink'` or `'steady'`. `STAR_BREATH_MS`, `STAR_LOW`, `STAR_SPARKLE_MS` and `STAR_BLINK_MS` tune it. |
+| `BAUBLE_LEVELS` | | Bauble brightness after 0 to 6 gifts, from full down to 15%, so the tree never goes dark. |
+| `STAR_MODE` | `'twinkle'` | `'twinkle'` (slow breathing with a short sparkle), `'blink'` or `'steady'`. `STAR_BREATH_MS`, `STAR_LOW` (0.55), `STAR_HIGH` (1.0), `STAR_SPARKLE_MS` and `STAR_BLINK_MS` tune it. |
 | `PAUSE_MIN_S`, `PAUSE_MAX_S` | 8, 25 | Random wait before each gift, in seconds. |
 | `FEINT_CHANCE`, `FEINT_MAX`, `FEINT_HOLD_S` | 45, 2, 1 | The elf's feints, see above. |
 | `GIFT_FLASH_MS` | 900 | The baubles blink when a gift lands in the sleigh. 0 turns it off. |
@@ -89,4 +91,4 @@ To go back to the official CyberBrick app, restore the original `boot.py`.
 
 ## Test status
 
-Version 2.4 ran on the real core from memory (14 November 2026), without servos and LEDs connected, with no errors. The ring speed and turn time of 2.7 were measured on the real kit. Saving it on the board with the `boot.py` change and a full show on the assembled diorama are still to be done. See the [roadmap](../ROADMAP.md).
+Version 2.4 ran on the real core from memory (14 November 2026), without servos and LEDs connected, with no errors. The ring speed and turn time of 2.7 and 2.8 were measured on the real kit. Saving it on the board with the `boot.py` change and a full show on the assembled diorama are still to be done. See the [roadmap](../ROADMAP.md).

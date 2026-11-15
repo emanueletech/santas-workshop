@@ -6,7 +6,7 @@
   <img src="assets/badges/status.svg" height="28" alt="Status: work in progress">
   <img src="assets/badges/makerworld.svg" height="28" alt="MakerWorld exclusive">
   <img src="assets/badges/cyberbrick.svg" height="28" alt="CyberBrick, MicroPython">
-  <img src="assets/badges/firmware.svg" height="28" alt="Firmware 2.7">
+  <img src="assets/badges/firmware.svg" height="28" alt="Firmware 2.8">
   <img src="assets/badges/guide.svg" height="28" alt="Guide in English and Italian">
 </p>
 
@@ -88,7 +88,7 @@ Tutto viene dalla linea Bambu Lab CyberBrick e si collega con i cavi del kit, se
 
 ## 💾 Firmware
 
-[`firmware/main.py`](firmware/main.py) è un programma MicroPython autonomo per il core CyberBrick. Gestisce da solo tutto lo spettacolo: luci, fermate dell'anello e braccio dell'elfo in momenti casuali, con tutti i tempi in un unico blocco di impostazioni in cima al file. La versione 2.7 è ancora da provare sul diorama montato. Collegamenti e caricamento sono in [`firmware/README.md`](firmware/README.md) (in inglese).
+[`firmware/main.py`](firmware/main.py) è un programma MicroPython autonomo per il core CyberBrick. Gestisce da solo tutto lo spettacolo: luci, fermate dell'anello e braccio dell'elfo in momenti casuali, con tutti i tempi in un unico blocco di impostazioni in cima al file. La versione 2.8 è ancora da provare sul diorama montato. Collegamenti e caricamento sono in [`firmware/README.md`](firmware/README.md) (in inglese).
 
 ## 📸 Il diorama stampato
 
