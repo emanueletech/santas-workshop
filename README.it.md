@@ -34,6 +34,11 @@
   <img src="assets/stats_it.svg" alt="151 pezzi stampati, 13 piatti, 24,6 ore e 736 g di PLA, niente colla, supporti o AMS" width="100%">
 </p>
 
+## 🎬 Video di montaggio
+
+<p align="center"><a href="https://youtu.be/pzDiji6TK0Q"><img src="images/video_thumbnail.jpg" alt="Guarda il video del montaggio 3D del Laboratorio di Babbo Natale su YouTube" width="100%"></a></p>
+<p align="center"><sub>Tutti i passi del montaggio in animazione 3D, su YouTube.</sub></p>
+
 ## 🛠 Guida di montaggio
 
 <p align="center">

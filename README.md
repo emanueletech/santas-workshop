@@ -34,6 +34,11 @@
   <img src="assets/stats.svg" alt="151 printed parts, 13 plates, 24.6 hours and 736 g of PLA, no glue, supports or AMS" width="100%">
 </p>
 
+## 🎬 Assembly video
+
+<p align="center"><a href="https://youtu.be/pzDiji6TK0Q"><img src="images/video_thumbnail.jpg" alt="Watch the Santa's Workshop 3D assembly video on YouTube" width="100%"></a></p>
+<p align="center"><sub>Every step of the build as a 3D animation, on YouTube.</sub></p>
+
 ## 🛠 Assembly guide
 
 <p align="center">
