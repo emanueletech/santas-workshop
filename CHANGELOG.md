@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-15
+
+- Firmware 2.7: `RING_SPEED` back to -30, because at -20 the real kit stalls with six gifts on the ring. `RING_TURN_S` 9.46 s, measured at -30 with six gifts (two turns in 18.9 s).
+
 ## 2026-11-14
 
 - Firmware 2.6: quieter ring (`RING_SPEED` -20) with the turn time measured on the real kit (`RING_TURN_S` 17.7 s; the old 60 s estimate made several gifts drop at once). Dimmer lanterns, baubles blink when a gift lands, red blink for one minute at the end and then the lights stay on, elf servo released at rest so it does not buzz.

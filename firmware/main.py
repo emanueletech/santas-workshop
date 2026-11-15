@@ -1,4 +1,4 @@
-# Santa's Workshop - standalone program for the CyberBrick core (MicroPython, bbl library). v2.6
+# Santa's Workshop - standalone program for the CyberBrick core (MicroPython, bbl library). v2.7
 # Switch on and the diorama runs by itself. Settings below; the show, wiring, upload steps and every
 # setting are explained in firmware/README.md (github.com/emanueletech/santas-workshop).
 # Save this file on the core as /main.py and start it from boot.py with: import main; main.main()
@@ -16,9 +16,9 @@ from bbl.servos import ServosController
 from bbl.leds import LEDController
 
 # ---------------------------------------------------------------- SETTINGS
-RING_SPEED = -20         # -100..100; minus = ring counter-clockwise seen from above on the real kit; lower = quieter
+RING_SPEED = -30         # -100..100; minus = ring counter-clockwise seen from above on the real kit (-20 stalls with 6 gifts)
 LOAD_S = 25              # seconds to load the gifts after switching on
-RING_TURN_S = 17.7       # seconds for ONE full ring turn at RING_SPEED (measured on the real kit at -20: 2 turns 35.4 s)
+RING_TURN_S = 9.46       # seconds for ONE full ring turn at RING_SPEED (measured on the real kit at -30 with 6 gifts: 2 turns 18.9 s)
 ELF_WORK = 90            # elf servo angle with the arm across the track
 ELF_DIR = 1              # +1 or -1: side the arm swings out (towards Santa, away from the tree)
 ELF_OUT = 28             # degrees from ELF_WORK to the rest position over the snow

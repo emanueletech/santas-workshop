@@ -1,6 +1,6 @@
 # Firmware
 
-`main.py` is the standalone program for the CyberBrick core on the receiver shield (ESP32-C3, MicroPython, Bambu `bbl` library). Current version: 2.6 (ring speed and turn time measured on the real kit, still to be tested as a full show on the assembled diorama).
+`main.py` is the standalone program for the CyberBrick core on the receiver shield (ESP32-C3, MicroPython, Bambu `bbl` library). Current version: 2.7 (ring speed and turn time measured on the real kit, still to be tested as a full show on the assembled diorama).
 
 It needs no remote and no buttons: switch on and the show starts. `main.py` is kept short on purpose, because the core has little memory to compile it: every setting has a one-line comment there, and this page explains the rest.
 
@@ -30,9 +30,9 @@ They are at the top of `main.py`.
 
 | Setting | Default | What it does |
 | --- | --- | --- |
-| `RING_SPEED` | -20 | Ring servo speed, -100 to 100. Seen from above the ring must turn counter-clockwise, so the gifts move from the front towards the elf: on the real kit that is a negative value. Flip the sign if it does not. Lower is quieter. Slower means more time between two gifts. |
+| `RING_SPEED` | -30 | Ring servo speed, -100 to 100. Seen from above the ring must turn counter-clockwise, so the gifts move from the front towards the elf: on the real kit that is a negative value. Flip the sign if it does not. At -20 the real kit stalls with six gifts on the ring. Slower means more time between two gifts. |
 | `LOAD_S` | 25 | Seconds to load the gifts after switching on. |
-| `RING_TURN_S` | 17.7 | Seconds for one full turn of the ring at `RING_SPEED`, measured on the real kit at -20 (two turns in 35.4 s). Every stop depends on it: if you change `RING_SPEED`, time two turns with a phone and a charged battery and write half here. |
+| `RING_TURN_S` | 9.46 | Seconds for one full turn of the ring at `RING_SPEED`, measured on the real kit at -30 with six gifts on the ring (two turns in 18.9 s). Every stop depends on it: if you change `RING_SPEED`, time two turns with a phone and a charged battery and write half here. |
 | `ELF_WORK` | 90 | Elf servo angle with the arm across the track (the assembly position). |
 | `ELF_DIR` | 1 | Side the arm swings out: towards Santa and the sleigh, away from the tree. |
 | `ELF_OUT` | 28 | Degrees from `ELF_WORK` to the rest position over the snow. The model is free from 0 to 34. |
@@ -53,7 +53,7 @@ They are at the top of `main.py`.
 | `DONE_BLINK_S` | 60 | Seconds of red blinking after the last gift, then the normal lights stay on. |
 | `ELF_RELEASE` | True | At rest the elf servo signal is switched off, so it does not buzz. The arm has no load over the snow. |
 
-The arm finds the empty spot if the ring stops within about 12 degrees of where it should, which is about 0.6 seconds on a 17.7-second turn: that is why `RING_TURN_S` must be measured.
+The arm finds the empty spot if the ring stops within about 12 degrees of where it should, which is about 0.3 seconds on a 9.5-second turn: that is why `RING_TURN_S` must be measured.
 
 ## Wiring
 
@@ -89,4 +89,4 @@ To go back to the official CyberBrick app, restore the original `boot.py`.
 
 ## Test status
 
-Version 2.4 ran on the real core from memory (14 November 2026), without servos and LEDs connected, with no errors. The ring speed and turn time of 2.6 were measured on the real kit. Saving it on the board with the `boot.py` change and a full show on the assembled diorama are still to be done. See the [roadmap](../ROADMAP.md).
+Version 2.4 ran on the real core from memory (14 November 2026), without servos and LEDs connected, with no errors. The ring speed and turn time of 2.7 were measured on the real kit. Saving it on the board with the `boot.py` change and a full show on the assembled diorama are still to be done. See the [roadmap](../ROADMAP.md).
