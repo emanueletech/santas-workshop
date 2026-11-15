@@ -6,7 +6,7 @@ It needs no remote and no buttons: switch on and the show starts. `main.py` is k
 
 ## The show
 
-1. Switch on. The elf's arm goes across the track at once and stays there, waiting a few degrees towards the tree. The lanterns blink green: put the six gifts on the free circles of the ring.
+1. Switch on. The elf's arm goes across the track at once and stays there, waiting a few degrees towards the tree. The lanterns blink green: you have 25 seconds to put the six gifts on the free circles you can see (the circle inside the little house stays empty).
 2. The ring moves in short steps, a quarter of a spot each, with a short random pause between them. At every step the arm swings a little towards the sleigh while the ring turns: ring and arm push the gift at the blade together, it slides along the arm and drops into the sleigh. Then the arm goes back towards the tree for the next gift.
 3. After 22 steps the ring makes one last quick turn without pauses, which carries in any gift still on the ring.
 4. Finale: every light swaps red and green for ten seconds. Then the diorama stays on as an ornament: the normal lights come back, the star twinkles and the tree baubles breathe slowly, taking a new colour at every breath (red, gold, green, blue, purple). Open the drawer and take the gifts.
