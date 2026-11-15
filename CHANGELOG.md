@@ -2,6 +2,10 @@
 
 ## 2026-11-15
 
+- Firmware 3.14, the version for the published model. The ring moves in short steps (a quarter of a spot, 22 steps with random pauses of 0.6 to 2.5 s) and the arm swings towards the sleigh at every step, so ring and arm push the gift together; the gifts can sit on any free circle. A last quick turn carries in any gift left on the ring. Finale: every light swaps red and green for 10 s. Then ornament mode: the baubles breathe slowly through red, gold, green, blue and purple. Warmer lanterns that match the street lamp, brighter star. Removed: the timed stops and their settings (`FIRST_DEG`, `HOME_DEG`, `STOP_TRIM_S`, `ALIGN_S`, `ELF_NUDGE`).
+- Firmware 3.6: before every gift the elf gets ready with two small 5° pushes of its arm (`ELF_NUDGE`); at the end only the sleigh lantern blinks red.
+- Firmware 3.5: simpler show. The elf's arm goes across the track after loading and stays there: every gift that reaches it slides along it and drops, so the stops no longer need exact timing. No more feints or parade lap. `RING_SPEED` -50 (two turns in 17.9 s with six gifts, `RING_TURN_S` 8.94, `STOP_TRIM_S` 0.28). New `HOME_DEG`: after the sixth gift the ring finishes its turn, so the next switch-on finds a circle under the arm.
+- Assembly guide: at power-on check that the arm rests over a ring circle (step 30); step 31 shows the new show.
 - Firmware 2.8: shorter, steadier stops (`START_LAG_MS` 250), the arm holds for 1.5 s after the ring stops so the gift lands first (`DROP_HOLD_MS`), brighter tree (star twinkles between 55% and 100%, baubles never go below 15%).
 - Firmware 2.7: `RING_SPEED` back to -30, because at -20 the real kit stalls with six gifts on the ring. `RING_TURN_S` 9.46 s, measured at -30 with six gifts (two turns in 18.9 s).
 

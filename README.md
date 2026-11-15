@@ -6,7 +6,7 @@
   <img src="assets/badges/status.svg" height="28" alt="Status: work in progress">
   <img src="assets/badges/makerworld.svg" height="28" alt="MakerWorld exclusive">
   <img src="assets/badges/cyberbrick.svg" height="28" alt="CyberBrick, MicroPython">
-  <img src="assets/badges/firmware.svg" height="28" alt="Firmware 2.8">
+  <img src="assets/badges/firmware.svg" height="28" alt="Firmware 3.14">
   <img src="assets/badges/guide.svg" height="28" alt="Guide in English and Italian">
 </p>
 
@@ -72,9 +72,9 @@ Thirty-one steps, from snapping the keys off the kit cards to loading the first 
 <p align="center"><img src="images/how_it_runs.gif" alt="How the workshop runs (render)" width="640"></p>
 
 1. **Lights on.** The tree, the workshop, the street lamp and both lanterns light up from six LEDs.
-2. **Load the gifts.** Six gifts snap onto the magnets of the ring while the lanterns blink green.
-3. **The elf picks its moment.** It waits a random time, from 8 to 25 seconds, and now and then it fakes: the arm swings into the empty spot and back out, and nothing drops. Then the elf swings its arm across the track for real, a 360° servo turns the 100-tooth ring one spot through a 12-tooth pinion, and the arm pushes the next gift off.
-4. **Into the drawer.** The sleigh has no floor, so each gift drops into a drawer in the front of the base. Each time a gift lands, the tree baubles blink and then dim one step. After the sixth gift the lanterns blink red for a minute, then the lights stay on.
+2. **Load the gifts.** The elf puts its arm across the track, and six gifts snap onto the magnets of the free circles while the lanterns blink green.
+3. **The elf at work.** A 360° servo turns the 100-tooth ring through a 12-tooth pinion in short steps, with a random pause between them. At every step the elf swings its arm towards the sleigh: ring and arm push the gift together, it slides along the arm and drops off.
+4. **Into the drawer.** The sleigh has no floor, so each gift drops into a drawer in the front of the base. A last quick turn carries in any gift still on the ring. Then every light swaps red and green for a few seconds, and the diorama stays on as an ornament: the star twinkles and the baubles breathe slowly through red, gold, green, blue and purple.
 
 Every switch-on gives a different show.
 
@@ -88,7 +88,7 @@ Everything comes from the Bambu Lab CyberBrick range and is plugged with the kit
 
 ## 💾 Firmware
 
-[`firmware/main.py`](firmware/main.py) is a standalone MicroPython program for the CyberBrick core. It runs the whole show on its own: light scenes, ring stops and the elf's arm at random moments, with every timing in one settings block at the top. Version 2.8 is still to be tested on the assembled diorama. Wiring and loading steps are in [`firmware/README.md`](firmware/README.md).
+[`firmware/main.py`](firmware/main.py) is a standalone MicroPython program for the CyberBrick core. It runs the whole show on its own: light scenes, ring steps with random pauses and the elf's arm, with every timing in one settings block at the top. Version 3.14 runs the full show on the assembled diorama. Wiring and loading steps are in [`firmware/README.md`](firmware/README.md).
 
 ## 📸 The printed diorama
 

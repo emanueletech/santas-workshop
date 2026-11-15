@@ -1,28 +1,17 @@
 # Firmware
 
-`main.py` is the standalone program for the CyberBrick core on the receiver shield (ESP32-C3, MicroPython, Bambu `bbl` library). Current version: 2.8 (ring speed and turn time measured on the real kit, still to be tested as a full show on the assembled diorama).
+`main.py` is the standalone program for the CyberBrick core on the receiver shield (ESP32-C3, MicroPython, Bambu `bbl` library). Current version: 3.14.
 
 It needs no remote and no buttons: switch on and the show starts. `main.py` is kept short on purpose, because the core has little memory to compile it: every setting has a one-line comment there, and this page explains the rest.
 
 ## The show
 
-1. Switch on with the ring empty. The lights start and the lanterns blink green: put the six gifts on the ring, leaving empty the spot in front of the elf.
-2. The ring makes a first move and stops with the empty spot in front of the elf.
-3. For each gift the elf waits a random time with its arm out. Now and then it fakes once or twice: the arm swings into the empty spot and back out while the ring stays still, so nothing drops. Then the arm swings in for real, the ring moves one spot, the next gift is pushed into the sleigh and the arm swings out again. The ring always stops with the gifts on their magnets.
-4. Each time a gift lands the tree baubles blink, then dim one step. After the sixth gift the lanterns blink red for a minute, then the normal lights stay on: open the drawer and take the gifts.
+1. Switch on. The elf's arm goes across the track at once and stays there, waiting a few degrees towards the tree. The lanterns blink green: put the six gifts on the free circles of the ring.
+2. The ring moves in short steps, a quarter of a spot each, with a short random pause between them. At every step the arm swings a little towards the sleigh while the ring turns: ring and arm push the gift at the blade together, it slides along the arm and drops into the sleigh. Then the arm goes back towards the tree for the next gift.
+3. After 22 steps the ring makes one last quick turn without pauses, which carries in any gift still on the ring.
+4. Finale: every light swaps red and green for ten seconds. Then the diorama stays on as an ornament: the normal lights come back, the star twinkles and the tree baubles breathe slowly, taking a new colour at every breath (red, gold, green, blue, purple). Open the drawer and take the gifts.
 
-A show lasts about 2.5 to 4 minutes.
-
-The randomness is set at the top of `main.py`:
-
-| Setting | Default | What it does |
-| --- | --- | --- |
-| `PAUSE_MIN_S`, `PAUSE_MAX_S` | 8, 25 | Random wait before each gift, in seconds. |
-| `FEINT_CHANCE` | 45 | Chance in % that the elf fakes before a gift. Set 0 to turn the feints off. |
-| `FEINT_MAX` | 2 | Most feints before one gift. |
-| `FEINT_HOLD_S` | 1 | Seconds the arm stays in during a feint. |
-
-The ring has no sensor: its position comes from the time, so measure `RING_TURN_S` well. The whole show is only six spots of travel, less than one turn, and a feint never moves the ring. The gifts always drop in the order they sit on the ring: a truly random order would need the arm to land between two gifts, and with a timed ring that is not reliable.
+The show lasts about a minute and a half after loading. The ring has no sensor and the gifts can sit on any circle: the arm stays across the track the whole time, so the timing does not need to be exact.
 
 ## All settings
 
@@ -30,32 +19,32 @@ They are at the top of `main.py`.
 
 | Setting | Default | What it does |
 | --- | --- | --- |
-| `RING_SPEED` | -30 | Ring servo speed, -100 to 100. Seen from above the ring must turn counter-clockwise, so the gifts move from the front towards the elf: on the real kit that is a negative value. Flip the sign if it does not. At -20 the real kit stalls with six gifts on the ring. Slower means more time between two gifts. |
+| `RING_SPEED` | -50 | Ring servo speed, -100 to 100. Seen from above the ring must turn counter-clockwise, so the gifts move from the front towards the elf: on the real kit that is a negative value. Flip the sign if it does not. At -50 the ring has enough push to pull a gift off its magnet; at -20 it stalls. |
 | `LOAD_S` | 25 | Seconds to load the gifts after switching on. |
-| `RING_TURN_S` | 9.46 | Seconds for one full turn of the ring at `RING_SPEED`, measured on the real kit at -30 with six gifts on the ring (two turns in 18.9 s). Every stop depends on it: if you change `RING_SPEED`, time two turns with a phone and a charged battery and write half here. |
+| `RING_TURN_S` | 8.94 | Seconds for one full turn of the ring at `RING_SPEED`, measured on the real kit at -50 with six gifts (two turns in 17.9 s). No precision is needed. |
 | `ELF_WORK` | 90 | Elf servo angle with the arm across the track (the assembly position). |
 | `ELF_DIR` | 1 | Side the arm swings out: towards Santa and the sleigh, away from the tree. |
-| `ELF_OUT` | 28 | Degrees from `ELF_WORK` to the rest position over the snow. The model is free from 0 to 34. |
-| `ELF_SWING_MS` | 1600 | Time for one arm swing. The ring is always still meanwhile. |
-| `ALIGN_S` | 3 | Seconds the arm stays across the track at power-on, to check the assembly angle. |
-| `FIRST_DEG` | 29.9 | First ring move, from the loading position to the stop with the empty spot in front of the elf. |
-| `STOP_TRIM_S` | 0 | Small correction added to every ring move if the stops come early or late. |
+| `ELF_OUT` | 28 | Degrees from `ELF_WORK` to the rest position over the snow, used at the end of the show. |
+| `ELF_SWING_MS` | 1600 | Time for one full arm swing. |
+| `STEP_DEG` | 12.9 | One ring step: a quarter of a spot (360 / 28). The gift at the blade slides a little further at every step. |
+| `MOVES` | 22 | Ring steps in one show. With the gifts on the free circles they are usually all in by then. |
+| `LAST_LAP_DEG` | 150 | One last quick turn without pauses, which carries in any gift still on the ring. 0 turns it off. |
 | `START_LAG_MS` | 250 | Extra time for every ring move, because the ring starts from standstill at each stop. |
-| `DROP_HOLD_MS` | 1500 | The arm stays across the track this long after the ring stops, so the gift lands before the arm moves back. |
-| `ELF_STEP_SPEED` | 25 | Arm swing speed (bbl stepping speed, about 39 degrees per second). |
-| `BRIGHT` | 0.6 | Overall LED brightness, 0 to 1. Lower means longer battery life. |
-| `LANTERN_BRIGHT` | 0.35 | Sleigh and elf lanterns, as a part of `BRIGHT`: they sit close to the eye. |
-| `WARM`, `LAMP`, `STAR`, `BAUBLES` | | Colours of the workshop, lamps and lanterns, tree star and baubles. The bauble colour is nearly red on purpose: the green tree tiers tint it, and it comes out warm gold. |
+| `ELF_STEP_SPEED` | 25 | Arm swing speed (bbl stepping speed). |
+| `ELF_BACK` | 5 | Between steps the blade waits this many degrees towards the tree, ready for the next gift. Keep it at 6 or less: the tree garland is close. |
+| `ELF_PUSH` | 8 | During every ring step the blade swings this many degrees towards the sleigh, so ring and arm push the gift together. More can push a gift off the track before the sleigh. |
+| `BRIGHT` | 0.6 | Brightness of the workshop, street lamp and lanterns, 0 to 1. Lower means longer battery life. |
+| `WARM`, `LAMP` | | Colours of the workshop and the street lamp. |
+| `LANTERN`, `LANTERN_BRIGHT` | orange, 0.45 | Colour and power of the sleigh and elf lanterns. Their small glass shows the LED whiter, so a warmer colour gives the same light as the street lamp. Too white: lower the middle number; too orange: raise it. |
+| `STAR`, `BAUBLES` | | Colours of the tree star (almost white, the most light the LED gives) and of the baubles during the show (nearly red on purpose: the green tiers turn it gold). |
 | `TREE_BRIGHT` | 1.0 | Power of the two tree LEDs. |
-| `BAUBLE_LEVELS` | | Bauble brightness after 0 to 6 gifts, from full down to 15%, so the tree never goes dark. |
-| `STAR_MODE` | `'twinkle'` | `'twinkle'` (slow breathing with a short sparkle), `'blink'` or `'steady'`. `STAR_BREATH_MS`, `STAR_LOW` (0.55), `STAR_HIGH` (1.0), `STAR_SPARKLE_MS` and `STAR_BLINK_MS` tune it. |
-| `PAUSE_MIN_S`, `PAUSE_MAX_S` | 8, 25 | Random wait before each gift, in seconds. |
-| `FEINT_CHANCE`, `FEINT_MAX`, `FEINT_HOLD_S` | 45, 2, 1 | The elf's feints, see above. |
-| `GIFT_FLASH_MS` | 900 | The baubles blink when a gift lands in the sleigh. 0 turns it off. |
-| `DONE_BLINK_S` | 60 | Seconds of red blinking after the last gift, then the normal lights stay on. |
-| `ELF_RELEASE` | True | At rest the elf servo signal is switched off, so it does not buzz. The arm has no load over the snow. |
-
-The arm finds the empty spot if the ring stops within about 12 degrees of where it should, which is about 0.3 seconds on a 9.5-second turn: that is why `RING_TURN_S` must be measured.
+| `STAR_MODE` | `'twinkle'` | `'twinkle'` (soft blink), `'blink'` (sharp on and off) or `'steady'`. `STAR_BREATH_MS`, `STAR_LOW`, `STAR_HIGH`, `STAR_SPARKLE_MS` and `STAR_BLINK_MS` tune it. |
+| `BAUBLE_COLORS` | red, gold, green, blue, purple | Ornament mode after the show: the baubles breathe slowly and take the next colour at every breath. Leave one colour for no change. `BAUBLE_BREATH_MS` and `BAUBLE_LOW` tune the breath. |
+| `PAUSE_MIN_S`, `PAUSE_MAX_S` | 0.6, 2.5 | Random pause before each ring step, in seconds. |
+| `DONE_MODE` | `'xmas'` | Finale when all gifts are in: `'xmas'` every light swaps red and green, `'red'` every light blinks red, `'sleigh'` only the sleigh lantern blinks red. |
+| `DONE_BLINK_S`, `DONE_STEP_MS` | 10, 500 | Length of the finale in seconds, and time of one colour in milliseconds. |
+| `IDLE_MOVE` | False | After the show: `False` keeps only the lights on, nothing moves and the arm rests. `True` makes the ring take a short step now and then, so a gift put back on the ring goes into the sleigh again. `IDLE_MIN_S` and `IDLE_MAX_S` set the wait. |
+| `ELF_RELEASE` | True | When the arm stands still its servo signal is switched off, so it does not buzz. |
 
 ## Wiring
 
@@ -84,11 +73,10 @@ To go back to the official CyberBrick app, restore the original `boot.py`.
 
 ## Settings to check on the first run
 
-- `RING_TURN_S`: seconds for one full turn of the ring. There is no sensor, so the stops depend on this value. Time one turn with a charged battery and write it here.
 - `RING_SPEED`: the ring must turn counter-clockwise seen from above. Flip the sign if it does not.
-- `ELF_DIR`: the arm must swing out towards Santa and the sleigh. If it swings towards the tree, switch off at once and set `-1`.
+- `ELF_DIR`: at the end of the show the arm must swing out towards Santa and the sleigh. If it swings towards the tree, switch off at once and set `-1`.
 - `ELF_WORK`: the angle with the arm across the track. Trim by a few degrees until it lies on its line.
 
 ## Test status
 
-Version 2.4 ran on the real core from memory (14 November 2026), without servos and LEDs connected, with no errors. The ring speed and turn time of 2.7 and 2.8 were measured on the real kit. Saving it on the board with the `boot.py` change and a full show on the assembled diorama are still to be done. See the [roadmap](../ROADMAP.md).
+Version 3.14 runs the full show on the assembled diorama (15 November 2026). See the [roadmap](../ROADMAP.md).

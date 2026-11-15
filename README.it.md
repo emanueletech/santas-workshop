@@ -6,7 +6,7 @@
   <img src="assets/badges/status.svg" height="28" alt="Status: work in progress">
   <img src="assets/badges/makerworld.svg" height="28" alt="MakerWorld exclusive">
   <img src="assets/badges/cyberbrick.svg" height="28" alt="CyberBrick, MicroPython">
-  <img src="assets/badges/firmware.svg" height="28" alt="Firmware 2.8">
+  <img src="assets/badges/firmware.svg" height="28" alt="Firmware 3.14">
   <img src="assets/badges/guide.svg" height="28" alt="Guide in English and Italian">
 </p>
 
@@ -72,9 +72,9 @@ Trentuno passi, dallo staccare le chiavette dalle kit card fino a caricare i pri
 <p align="center"><img src="images/how_it_runs.gif" alt="Come gira il laboratorio (render)" width="640"></p>
 
 1. **Luci accese.** L'albero, l'officina, il lampione e le due lanterne si accendono con sei LED.
-2. **Carica i regali.** Sei regali si agganciano ai magneti dell'anello mentre le lanterne lampeggiano verdi.
-3. **L'elfo sceglie il momento.** Aspetta un tempo a caso, da 8 a 25 secondi, e ogni tanto fa una finta: infila il braccio nel posto vuoto e lo ritira, e non cade niente. Poi l'elfo porta davvero il braccio di traverso sulla pista, un servo a 360° fa avanzare di un posto l'anello da 100 denti con un pignone da 12, e il braccio spinge giù il regalo successivo.
-4. **Nel cassetto.** La slitta non ha fondo, quindi ogni regalo cade in un cassetto sul davanti della base. Ogni volta che cade un regalo le palline dell'albero lampeggiano e poi si abbassano di un gradino. Dopo il sesto regalo le lanterne lampeggiano rosse per un minuto, poi le luci restano accese.
+2. **Carica i regali.** L'elfo mette il braccio di traverso sulla pista e sei regali si agganciano ai magneti dei cerchi liberi mentre le lanterne lampeggiano verdi.
+3. **L'elfo al lavoro.** Un servo a 360° fa girare l'anello da 100 denti con un pignone da 12, a piccoli passi con una pausa casuale fra uno e l'altro. A ogni passo l'elfo spinge il braccio verso la slitta: anello e braccio spingono insieme il regalo, che scivola lungo il braccio e cade.
+4. **Nel cassetto.** La slitta non ha fondo, quindi ogni regalo cade in un cassetto sul davanti della base. Un ultimo giro veloce porta dentro i regali rimasti sull'anello. Poi tutte le luci si alternano rosse e verdi per qualche secondo e il diorama resta acceso come decorazione: la stella brilla e le palline respirano piano passando per rosso, oro, verde, blu e viola.
 
 Ogni accensione è uno spettacolo diverso.
 
@@ -88,7 +88,7 @@ Tutto viene dalla linea Bambu Lab CyberBrick e si collega con i cavi del kit, se
 
 ## 💾 Firmware
 
-[`firmware/main.py`](firmware/main.py) è un programma MicroPython autonomo per il core CyberBrick. Gestisce da solo tutto lo spettacolo: luci, fermate dell'anello e braccio dell'elfo in momenti casuali, con tutti i tempi in un unico blocco di impostazioni in cima al file. La versione 2.8 è ancora da provare sul diorama montato. Collegamenti e caricamento sono in [`firmware/README.md`](firmware/README.md) (in inglese).
+[`firmware/main.py`](firmware/main.py) è un programma MicroPython autonomo per il core CyberBrick. Gestisce da solo tutto lo spettacolo: luci, passi dell'anello con pause casuali e braccio dell'elfo, con tutti i tempi in un unico blocco di impostazioni in cima al file. La versione 3.14 fa lo spettacolo completo sul diorama montato. Collegamenti e caricamento sono in [`firmware/README.md`](firmware/README.md) (in inglese).
 
 ## 📸 Il diorama stampato
 
