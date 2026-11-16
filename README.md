@@ -3,8 +3,8 @@
 </p>
 
 <p align="center">
-  <img src="assets/badges/status.svg" height="28" alt="Status: work in progress">
-  <img src="assets/badges/makerworld.svg" height="28" alt="MakerWorld exclusive">
+  <img src="assets/badges/status.svg" height="28" alt="Status: published">
+  <a href="https://makerworld.com/en/models/3622136-animated-santa-s-workshop-diorama-with-leds"><img src="assets/badges/makerworld.svg" height="28" alt="MakerWorld exclusive"></a>
   <img src="assets/badges/cyberbrick.svg" height="28" alt="CyberBrick, MicroPython">
   <img src="assets/badges/firmware.svg" height="28" alt="Firmware 3.14">
   <img src="assets/badges/guide.svg" height="28" alt="Guide in English and Italian">
@@ -18,6 +18,7 @@
 </p>
 
 <p align="center">
+  <a href="https://makerworld.com/en/models/3622136-animated-santa-s-workshop-diorama-with-leds"><b>Download on MakerWorld</b></a> ·
   <a href="#-assembly-guide">Assembly guide</a> ·
   <a href="#-how-it-works">How it works</a> ·
   <a href="#-electronics">Electronics</a> ·
@@ -130,7 +131,7 @@ Everything comes from the Bambu Lab CyberBrick range and is plugged with the kit
 | [`assets/`](assets/) | Banner, logo and the graphics of this page. |
 
 > [!NOTE]
-> The printable files (STL, 3MF, STEP) are not in this repository. Santa's Workshop will be a MakerWorld exclusive, so they will be available only there. The link will be added here when the model is online.
+> The printable files (STL, 3MF, STEP) are not in this repository. Santa's Workshop is a MakerWorld exclusive: download them, with the ready print profile, from the [model page on MakerWorld](https://makerworld.com/en/models/3622136-animated-santa-s-workshop-diorama-with-leds).
 
 ## 📜 License
 

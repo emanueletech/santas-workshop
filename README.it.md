@@ -3,8 +3,8 @@
 </p>
 
 <p align="center">
-  <img src="assets/badges/status.svg" height="28" alt="Status: work in progress">
-  <img src="assets/badges/makerworld.svg" height="28" alt="MakerWorld exclusive">
+  <img src="assets/badges/status.svg" height="28" alt="Stato: pubblicato">
+  <a href="https://makerworld.com/en/models/3622136-animated-santa-s-workshop-diorama-with-leds"><img src="assets/badges/makerworld.svg" height="28" alt="Esclusiva MakerWorld"></a>
   <img src="assets/badges/cyberbrick.svg" height="28" alt="CyberBrick, MicroPython">
   <img src="assets/badges/firmware.svg" height="28" alt="Firmware 3.14">
   <img src="assets/badges/guide.svg" height="28" alt="Guide in English and Italian">
@@ -18,6 +18,7 @@
 </p>
 
 <p align="center">
+  <a href="https://makerworld.com/en/models/3622136-animated-santa-s-workshop-diorama-with-leds"><b>Scarica da MakerWorld</b></a> ·
   <a href="#-guida-di-montaggio">Guida di montaggio</a> ·
   <a href="#-come-funziona">Come funziona</a> ·
   <a href="#-elettronica">Elettronica</a> ·
@@ -130,7 +131,7 @@ Tutto viene dalla linea Bambu Lab CyberBrick e si collega con i cavi del kit, se
 | [`assets/`](assets/) | Banner, logo e grafiche di questa pagina. |
 
 > [!NOTE]
-> I file da stampare (STL, 3MF, STEP) non sono in questa repository. Il Laboratorio di Babbo Natale sarà un modello esclusivo MakerWorld, quindi saranno disponibili solo lì. Il link verrà aggiunto qui quando il modello sarà online.
+> I file da stampare (STL, 3MF, STEP) non sono in questa repository. Il Laboratorio di Babbo Natale è un modello esclusivo MakerWorld: li scarichi, con il profilo di stampa pronto, dalla [pagina del modello su MakerWorld](https://makerworld.com/en/models/3622136-animated-santa-s-workshop-diorama-with-leds).
 
 ## 📜 Licenza
 

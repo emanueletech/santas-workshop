@@ -11,7 +11,7 @@
 - [ ] Guide: check step 10 (program and first test) against the real procedure.
 - [ ] Update the print profile after the servo bracket change and re-check the sliced plates.
 - [x] New README with banner, guide card and electronics card.
-- [ ] Publish on MakerWorld, add the link here and make this repository public.
+- [x] Published on MakerWorld (16 November 2026), link added, repository public.
 
 ## After publishing
 

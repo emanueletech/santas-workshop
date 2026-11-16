@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-16
+
+- Santa's Workshop is published on MakerWorld: [model page](https://makerworld.com/en/models/3622136-animated-santa-s-workshop-diorama-with-leds). Links added to the README and the license.
+
 ## 2026-11-15
 
 - Firmware 3.14, the version for the published model. The ring moves in short steps (a quarter of a spot, 22 steps with random pauses of 0.6 to 2.5 s) and the arm swings towards the sleigh at every step, so ring and arm push the gift together; the gifts can sit on any free circle. A last quick turn carries in any gift left on the ring. Finale: every light swaps red and green for 10 s. Then ornament mode: the baubles breathe slowly through red, gold, green, blue and purple. Warmer lanterns that match the street lamp, brighter star. Removed: the timed stops and their settings (`FIRST_DEG`, `HOME_DEG`, `STOP_TRIM_S`, `ALIGN_S`, `ELF_NUDGE`).
